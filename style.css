@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  text-decoration: none;
+  list-style: none;
+}
+
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #008ec3;
+  --text-color: #000000;
+}
+
+body {
+  min-height: 4000px;
+}
+nav .logo {
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: "Unbounded", sans-serif;
+  position: relative;
+}
+
+nav .logo::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #ffffff8e;
+  left: 50%;
+  bottom: -2px;
+  transition: 0.3s ease-out;
+  transform: translateX(-50%);
+}
+
+nav .logo:hover::after {
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  position: fixed;
+  inset: 1rem 1rem auto 1rem;
+  z-index: 100;
+  border-radius: 1rem;
+  border: 1px solid #ffffff27;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 4rem;
+  backdrop-filter: blur(5px);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav a {
+  color: var(--primary-color);
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+nav li a:hover {
+  color: #d0f4ff;
+}
+
+nav i {
+  color: var(--secondary-color);
+  font-size: 0.8rem;
+}
+
+nav button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+nav li .search-box {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+  background-color: #ffffff9c;
+}
+
+nav li .search-box input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 0.8rem;
+}
+
+#hero {
+  background-image: linear-gradient(to bottom, transparent 90%, white),
+    url(img/stock8.jpg);
+  background-size: 100%;
+  background-position: center 60%;
+  height: 43rem;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  align-items: center;
+  justify-content: end;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+#hero .cta {
+  background-color: var(--primary-color);
+  padding: 1rem 2rem;
+  width: 75vw;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(50%);
+}
+
+#hero .cta h1 {
+  font-size: 3.2rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+#hero .cta p {
+  font-size: 1.7rem;
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+#hero .cta-book {
+  width: 100%;
+  border: 1px solid #00000027;
+  margin: 1.5rem 0;
+  height: 5rem;
+  padding: 0 0.5rem;
+  border-radius: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+#hero .cta-book .checkin,
+#hero .cta-book .checkout,
+#hero .cta-book .guests {
+  display: flex;
+  width: 11rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+#hero .cta-book .location {
+  display: flex;
+  width: 14rem;
+  align-items: center;
+  gap: 1rem;
+}
+
+#hero .cta-book .parameters {
+  display: flex;
+  gap: 1rem;
+  width: 90%;
+  margin-left: 1rem;
+  justify-content: space-between;
+}
+
+#hero .cta-book .parameters .location i,
+#hero .cta-book .parameters .checkin i,
+#hero .cta-book .parameters .checkout i,
+#hero .cta-book .parameters .guests i {
+  font-size: 2rem;
+  color: #00000085;
+}
+
+#hero .cta-book .parameters .location .desc,
+#hero .cta-book .parameters .checkin .desc,
+#hero .cta-book .parameters .checkout .desc,
+#hero .cta-book .parameters .guests .desc {
+  display: flex;
+  flex-direction: column;
+}
+
+#hero .cta-book .parameters .location .desc h3,
+#hero .cta-book .parameters .checkin .desc h3,
+#hero .cta-book .parameters .checkout .desc h3,
+#hero .cta-book .parameters .guests .desc h3 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+#hero .cta-book .parameters .location .desc p,
+#hero .cta-book .parameters .checkin .desc p,
+#hero .cta-book .parameters .checkout .desc p,
+#hero .cta-book .parameters .guests .desc p {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #000000a6;
+}
+
+#hero .cta-book .search-btn {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  border-radius: 50%;
+  padding: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#hero .cta-book .search-btn i {
+  font-size: 1.5rem;
+}
