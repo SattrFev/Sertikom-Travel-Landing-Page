@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ExproTravel</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="src/app.js"></script>
     <script src="script.js" defer></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -22,6 +25,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <body>
     <nav id="nav">
@@ -33,16 +41,18 @@
             <button><i class="fas fa-search"></i></button>
           </div>
         </li>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="#hero">Home</a></li>
         <li><a href="#">Popular</a></li>
+        <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
     <section id="hero">
       <div class="cta">
-        <h1>Good Morning!</h1>
-        <p>Explore beautiful places in the world with ExproTravel</p>
+        <h1 class="greeting">Good Morning!</h1>
+        <p class="cta-text">
+          Explore the world in ease with <span>ExproTravel</span>
+        </p>
         <div class="cta-book">
           <div class="parameters">
             <div class="location">
@@ -78,6 +88,108 @@
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
         </div>
+      </div>
+    </section>
+
+    <section id="whychooseus">
+      <h1>Why choosing us?</h1>
+      <div class="reason-card">
+        <div class="comp-price">
+          <i class="fa-solid fa-dollar-sign"></i>
+          <h2>Competitive Price</h2>
+          <p>
+            We offer competitive prices for all our services, ensuring that you
+            get the best value for your money.
+          </p>
+        </div>
+
+        <div class="secure-booking">
+          <i class="fa-solid fa-lock"></i>
+          <h2>Secure Booking</h2>
+          <p>
+            We ensure that your booking process is secure and protected, so you
+            can book with confidence.
+          </p>
+        </div>
+
+        <div class="seamless-experience">
+          <i class="fa-solid fa-handshake"></i>
+          <h2>Seamless Experience</h2>
+          <p>
+            We provide a seamless experience for all our customers, from booking
+            to travel.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="ourpartners">
+      <h1>Our Partners</h1>
+      <div class="swiper partners-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo1.png" alt="Partner 1" />
+            <h2>The Nook</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo2.png" alt="Partner 2" />
+            <h2>Hideaway</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo3.png" alt="Partner 3" />
+            <h2>Serenpidity</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo3.png" alt="Partner 3" />
+            <h2>Serenpidity</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo4.png" alt="Partner 4" />
+            <h2>Cozybnb</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo5.png" alt="Partner 5" />
+            <h2>Travelx</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo6.png" alt="Partner 6" />
+            <h2>Earthly</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo7.png" alt="Partner 7" />
+            <h2>Homage</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo7.png" alt="Partner 7" />
+            <h2>Homage</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="top-book" x-data="top-book" x-data>
+      <h1>Top Booked</h1>
+      <div class="top-book-container">
+        <template x-for="(item, index) in items" :key="index">
+          <div class="top-book-card">
+            <div class="cover">
+              <div class="rating">
+                <i class="fa-solid fa-star"></i>
+                <p x-text="item.rating"></p>
+              </div>
+              <img :src="`img/top-book/${item.img}`" :alt="item.name" />
+            </div>
+            <div class="desc">
+              <div class="title">
+                <h2 x-text="item.name"></h2>
+                <div class="loc">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <p x-text="item.loc"></p>
+                </div>
+              </div>
+              <p class="price" x-text="item.price"></p>
+            </div>
+          </div>
+        </template>
       </div>
     </section>
   </body>

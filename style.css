@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  min-height: 100vh;
+  min-height: 2000px;
   background-color: #f8f8f8;
   overflow-x: hidden;
 }
@@ -59,10 +59,17 @@ nav {
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.15);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 
 nav a {
+  color: #313131;
+  transition: color 0.3s ease-in-out;
+}
+
+nav li a {
   color: var(--primary-color);
+  transition: color 0.3s ease-in-out;
 }
 
 nav li {
@@ -72,6 +79,7 @@ nav li {
 
 nav li a:hover {
   color: #d0f4ff;
+  transition: color 0.3s ease-in-out;
 }
 
 nav i {
@@ -116,9 +124,9 @@ nav li .search-box input::placeholder {
 
 #hero {
   background-image: linear-gradient(to bottom, transparent 90%, white),
-    url(img/stock8.jpg);
+    url(img/stock3.jpg);
   background-size: 100%;
-  background-position: center 60%;
+  background-position: center 100%;
   height: 43rem;
   display: flex;
   flex-direction: column;
@@ -127,10 +135,22 @@ nav li .search-box input::placeholder {
   justify-content: end;
 }
 
-#hero h1 {
+#hero .cta .greeting {
   font-size: 3rem;
   font-weight: 600;
-  color: var(--primary-color);
+}
+
+#hero .cta .cta-text {
+  font-size: 2rem;
+}
+
+#hero .cta .cta-text span {
+  font-size: 1.8rem;
+  font-family: "Unbounded", sans-serif;
+  background: linear-gradient(45deg, var(--secondary-color), #62b3c8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 #hero .cta {
@@ -138,6 +158,9 @@ nav li .search-box input::placeholder {
   background-color: var(--primary-color);
   padding: 1rem 2rem;
   width: 70vw;
+  height: 19rem;
+  display: flex;
+  flex-direction: column;
   border-radius: 1.5rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   transform: translateY(50%);
@@ -147,6 +170,7 @@ nav li .search-box input::placeholder {
   font-size: 3.2rem;
   color: var(--secondary-color);
   font-weight: 600;
+  transition: opacity 1s ease;
 }
 
 #hero .cta p {
@@ -158,7 +182,7 @@ nav li .search-box input::placeholder {
 #hero .cta-book {
   width: 100%;
   border: 1px solid #00000027;
-  margin: 1.5rem 0;
+  margin: 3.3rem 0rem 0rem;
   height: 5rem;
   padding: 0 0.8rem 0 2rem;
   border-radius: 2.5rem;
@@ -263,11 +287,260 @@ nav li .search-box input::placeholder {
   font-size: 1.5rem;
 }
 
+/* ============== Hero End ============== */
+
+/* ============== Why Choose Us ============== */
+
+#whychooseus {
+  padding: 17rem 5rem 0 5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#whychooseus h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+}
+
+#whychooseus .reason-card {
+  width: 65vw;
+  transition: width 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#whychooseus .reason-card .comp-price,
+#whychooseus .reason-card .secure-booking,
+#whychooseus .reason-card .seamless-experience {
+  padding: 2rem;
+  text-align: center;
+  border-radius: 1rem;
+  width: 20rem;
+}
+
+#whychooseus .reason-card .comp-price h2,
+#whychooseus .reason-card .secure-booking h2,
+#whychooseus .reason-card .seamless-experience h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+#whychooseus .reason-card .comp-price p,
+#whychooseus .reason-card .secure-booking p,
+#whychooseus .reason-card .seamless-experience p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2rem;
+}
+
+#whychooseus .reason-card .comp-price i,
+#whychooseus .reason-card .secure-booking i,
+#whychooseus .reason-card .seamless-experience i {
+  font-size: 2rem;
+  color: var(--secondary-color);
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 10px;
+  background-color: #72aaff2d;
+  margin-bottom: 2rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+#whychooseus .reason-card .comp-price:hover i,
+#whychooseus .reason-card .secure-booking:hover i,
+#whychooseus .reason-card .seamless-experience:hover i {
+  transform: translateY(-10%);
+}
+
+#ourpartners h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+#ourpartners {
+  padding: 8rem 0rem;
+  position: relative;
+}
+
+#ourpartners::before,
+#ourpartners::after {
+  content: "";
+  position: absolute;
+  top: 8rem;
+  bottom: 0;
+  width: 8rem;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#ourpartners .partners-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  padding: 0 2rem;
+}
+
+#ourpartners .partner-card {
+  display: flex;
+  width: auto; /* Let Swiper handle the width */
+  text-align: center;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+#ourpartners .partner-card:hover {
+  opacity: 1;
+}
+
+#ourpartners .partner-card img {
+  width: 4rem;
+}
+
+#ourpartners .partner-card h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+/* ============== Top Book ============== */
+#top-book {
+  padding: 8rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#top-book h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+#top-book .top-book-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 2rem;
+  width: 100%;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+#top-book .top-book-container .top-book-card {
+  width: 100%;
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+#top-book .top-book-container .top-book-card:hover {
+  transform: translateY(-5px);
+}
+
+#top-book .top-book-container .top-book-card .cover {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%; /* Creates a square aspect ratio */
+  position: relative;
+}
+
+#top-book .top-book-container .top-book-card .cover img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#top-book .top-book-container .top-book-card .desc {
+  padding: 1rem;
+}
+
+#top-book .top-book-container .top-book-card .desc .title h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+#top-book .top-book-container .top-book-card .desc .price {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+#top-book .top-book-container .top-book-card .desc .title .loc {
+  display: flex;
+  color: #000000a4;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#top-book .top-book-container .top-book-card .cover .rating {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+  gap: 0.5rem;
+  width: 4rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  position: absolute;
+  padding: 0.4rem;
+  border-radius: 0.3rem;
+  background-color: #0000009a;
+  z-index: 10;
+}
+
+#top-book .top-book-container .top-book-card .cover .rating i {
+  font-size: 1rem;
+  color: #ffda09;
+}
+
+#top-book .top-book-container .top-book-card .desc .title .loc p {
+  font-size: 0.8rem;
+}
+
+#top-book .top-book-container .top-book-card .desc .title .loc i {
+  font-size: 1rem;
+}
+
+#top-book .top-book-container .top-book-card .cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* Media Queries */
 
 @media (min-width: 2000px) {
   #hero .cta {
     width: 60%;
+  }
+
+  #hero .cta-book .parameters {
+    width: calc(100% - 15rem);
+  }
+
+  #whychooseus .reason-card {
+    width: 60vw;
   }
 }
 
@@ -275,9 +548,50 @@ nav li .search-box input::placeholder {
   #hero .cta {
     width: 55%;
   }
+
+  #whychooseus .reason-card {
+    width: 55vw;
+  }
 }
 @media (min-width: 2560px) {
   #hero .cta {
     width: 50%;
   }
+
+  #hero .cta-book .parameters {
+    width: calc(100% - 18rem);
+  }
+
+  #whychooseus .reason-card {
+    width: 50vw;
+  }
+}
+
+/* Add these rules after your existing nav styles */
+nav.scrolled {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+nav.scrolled a {
+  transition: color 0.3s ease-in-out;
+  color: var(--text-color);
+}
+
+nav.scrolled .logo {
+  background: linear-gradient(45deg, var(--secondary-color), #62b3c8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+nav.scrolled .logo::after {
+  background: #007bb08c;
+  transition: all 0.3s ease-in-out;
+}
+
+nav.scrolled li a:hover {
+  color: var(--secondary-color);
+  transition: color 0.3s ease-in-out;
 }
