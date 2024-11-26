@@ -26,6 +26,7 @@ body {
 nav .logo {
   font-size: 1.1rem;
   font-weight: 600;
+  color: white;
   font-family: "Unbounded", sans-serif;
   position: relative;
 }
@@ -123,29 +124,30 @@ nav li .search-box input::placeholder {
 }
 
 #hero {
-  background-image: linear-gradient(to bottom, transparent 90%, white),
-    url(img/stock3.jpg);
-  background-size: 100%;
-  background-position: center 100%;
-  height: 43rem;
+  background-image: linear-gradient(to bottom, #00000028 1%, transparent 90%),
+    url(img/stock8.jpg);
+  background-size: cover;
+  background-position: center 65%;
+  height: 45rem;
   display: flex;
   flex-direction: column;
   text-align: start;
   align-items: center;
   justify-content: end;
+  position: relative;
 }
 
 #hero .cta .greeting {
-  font-size: 3rem;
+  font-size: 4.4rem;
   font-weight: 600;
 }
 
 #hero .cta .cta-text {
-  font-size: 2rem;
+  font-size: 2.4rem;
 }
 
 #hero .cta .cta-text span {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-family: "Unbounded", sans-serif;
   background: linear-gradient(45deg, var(--secondary-color), #62b3c8);
   -webkit-background-clip: text;
@@ -157,13 +159,13 @@ nav li .search-box input::placeholder {
   transition: width 0.2s ease-in-out;
   background-color: var(--primary-color);
   padding: 1rem 2rem;
-  width: 70vw;
-  height: 19rem;
+  width: 75vw;
+  height: 23rem;
   display: flex;
   flex-direction: column;
-  border-radius: 1.5rem;
+  border-radius: 3rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  transform: translateY(50%);
+  transform: translateY(40%);
 }
 
 #hero .cta h1 {
@@ -183,9 +185,9 @@ nav li .search-box input::placeholder {
   width: 100%;
   border: 1px solid #00000027;
   margin: 3.3rem 0rem 0rem;
-  height: 5rem;
+  height: 6rem;
   padding: 0 0.8rem 0 2rem;
-  border-radius: 2.5rem;
+  border-radius: 3rem;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -197,7 +199,7 @@ nav li .search-box input::placeholder {
 #hero .cta-book .parameters {
   display: flex;
   gap: 1.5rem;
-  width: calc(100% - 6rem);
+  width: calc(100% - 10rem);
   justify-content: space-between;
 }
 
@@ -217,7 +219,7 @@ nav li .search-box input::placeholder {
 #hero .cta-book .parameters .checkin i,
 #hero .cta-book .parameters .checkout i,
 #hero .cta-book .parameters .guests i {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #00000085;
   transition: color 0.2s;
 }
@@ -250,7 +252,7 @@ nav li .search-box input::placeholder {
 #hero .cta-book .parameters .checkin .desc h3,
 #hero .cta-book .parameters .checkout .desc h3,
 #hero .cta-book .parameters .guests .desc h3 {
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 700;
 }
 
@@ -258,7 +260,7 @@ nav li .search-box input::placeholder {
 #hero .cta-book .parameters .checkin .desc p,
 #hero .cta-book .parameters .checkout .desc p,
 #hero .cta-book .parameters .guests .desc p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 400;
   color: #000000a6;
 }
@@ -304,11 +306,11 @@ nav li .search-box input::placeholder {
   text-transform: uppercase;
   font-weight: 700;
   color: var(--text-color);
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 #whychooseus .reason-card {
-  width: 65vw;
+  width: 75vw;
   transition: width 0.2s ease-in-out;
   display: flex;
   align-items: center;
@@ -321,13 +323,13 @@ nav li .search-box input::placeholder {
   padding: 2rem;
   text-align: center;
   border-radius: 1rem;
-  width: 20rem;
+  width: 21rem;
 }
 
 #whychooseus .reason-card .comp-price h2,
 #whychooseus .reason-card .secure-booking h2,
 #whychooseus .reason-card .seamless-experience h2 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
@@ -335,24 +337,24 @@ nav li .search-box input::placeholder {
 #whychooseus .reason-card .comp-price p,
 #whychooseus .reason-card .secure-booking p,
 #whychooseus .reason-card .seamless-experience p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 400;
-  line-height: 1.2rem;
+  line-height: 1.4rem;
 }
 
 #whychooseus .reason-card .comp-price i,
 #whychooseus .reason-card .secure-booking i,
 #whychooseus .reason-card .seamless-experience i {
-  font-size: 2rem;
+  font-size: 2.7rem;
   color: var(--secondary-color);
   display: flex;
   margin: 0 auto;
   align-items: center;
   justify-content: center;
-  width: 5rem;
-  height: 5rem;
-  border-radius: 10px;
-  background-color: #72aaff2d;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 1rem;
+  background-color: #72aaff17;
   margin-bottom: 2rem;
   transition: transform 0.2s ease-in-out;
 }
@@ -443,89 +445,136 @@ nav li .search-box input::placeholder {
   margin: 0 auto;
 }
 
-#top-book .top-book-container .top-book-card {
-  width: 100%;
-  background: white;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-}
-
-#top-book .top-book-container .top-book-card:hover {
-  transform: translateY(-5px);
-}
-
-#top-book .top-book-container .top-book-card .cover {
-  width: 100%;
-  height: 0;
-  padding-bottom: 100%; /* Creates a square aspect ratio */
-  position: relative;
-}
-
-#top-book .top-book-container .top-book-card .cover img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-#top-book .top-book-container .top-book-card .desc {
+#top-book .top-book-container .card {
+  width: 19rem;
+  height: 24.2rem;
+  cursor: pointer;
   padding: 1rem;
+  border-radius: 1rem;
+  transition: all 0.1s ease-in;
 }
 
-#top-book .top-book-container .top-book-card .desc .title h2 {
+#top-book .top-book-container .card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1%);
+}
+
+#top-book .top-book-container .card .cover {
+  width: 100%;
+  height: 18rem;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#top-book .top-book-container .card .cover .rating {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #00000067;
+  width: fit-content;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+
+#top-book .top-book-container .card .cover .rating i {
+  color: #ffda18;
+}
+
+#top-book .top-book-container .card .cover .rating p {
+  font-weight: 400;
+  color: #ffffffee;
+}
+
+#top-book .top-book-container .card .desc .price {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+#top-book .top-book-container .card .desc {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+#top-book .top-book-container .card .desc .title h2 {
   font-size: 1.2rem;
   font-weight: 700;
 }
 
-#top-book .top-book-container .top-book-card .desc .price {
-  font-size: 1.3rem;
-  font-weight: 700;
-}
-
-#top-book .top-book-container .top-book-card .desc .title .loc {
-  display: flex;
-  color: #000000a4;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-#top-book .top-book-container .top-book-card .cover .rating {
+#top-book .top-book-container .card .desc .title .loc {
   display: flex;
   align-items: center;
-  text-align: center;
-  color: #ffffff;
-  gap: 0.5rem;
-  width: 4rem;
-  margin-top: 1rem;
-  margin-left: 1rem;
+  gap: 0.7rem;
+}
+
+#top-book .top-book-container .card .desc .title .loc i {
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.397);
+}
+
+#top-book .top-book-container .card .desc .title .loc p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+#top-book .view-more {
+  margin-top: 2rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid #00000080;
+  color: var(--text-color);
+  padding: 1rem 3.5rem;
+  border-radius: 5rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+#top-book .view-more::before {
+  content: "";
   position: absolute;
-  padding: 0.4rem;
-  border-radius: 0.3rem;
-  background-color: #0000009a;
-  z-index: 10;
-}
-
-#top-book .top-book-container .top-book-card .cover .rating i {
-  font-size: 1rem;
-  color: #ffda09;
-}
-
-#top-book .top-book-container .top-book-card .desc .title .loc p {
-  font-size: 0.8rem;
-}
-
-#top-book .top-book-container .top-book-card .desc .title .loc i {
-  font-size: 1rem;
-}
-
-#top-book .top-book-container .top-book-card .cover img {
+  top: 0;
+  left: -100%;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  background-color: var(--secondary-color);
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+#top-book .view-more:hover::before {
+  left: 0;
+}
+
+#top-book .view-more:hover {
+  border-color: var(--secondary-color);
+  color: white;
+}
+
+#top-book .view-more i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+#top-book .view-more:hover i {
+  transform: translateX(5px);
+}
+
+#top-book .view-more a {
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+#top-book .view-more:hover a {
+  color: white;
+  transform: translateX(5px);
 }
 
 /* Media Queries */

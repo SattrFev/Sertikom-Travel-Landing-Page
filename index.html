@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ExproTravel</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="src/app.js"></script>
-    <script src="script.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,6 +28,12 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="src/app.js"></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <nav id="nav">
@@ -123,6 +127,43 @@
       </div>
     </section>
 
+    <section id="top-book" x-data="bookPlaces">
+      <h1>Top Booked</h1>
+      <div class="top-book-container">
+        <template x-for="(item, index) in items" x-key="index">
+          <div class="card">
+            <div
+              :style="{
+                backgroundImage: `url(img/top-book/${item.img})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }"
+              class="cover"
+            >
+              <div class="rating">
+                <i class="fa-solid fa-star"></i>
+                <p x-text="item.rating"></p>
+              </div>
+            </div>
+            <div class="desc">
+              <div class="title">
+                <h2 x-text="item.name"></h2>
+                <div class="loc">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <p x-text="item.loc"></p>
+                </div>
+              </div>
+              <h2 class="price" x-text="formatNumber(item.price)"></h2>
+            </div>
+          </div>
+        </template>
+      </div>
+      <div class="view-more">
+        <a href="#">See all</a>
+        <i class="fa-solid fa-arrow-right"></i>
+      </div>
+    </section>
+
     <section id="ourpartners">
       <h1>Our Partners</h1>
       <div class="swiper partners-container">
@@ -164,32 +205,6 @@
             <h2>Homage</h2>
           </div>
         </div>
-      </div>
-    </section>
-    <section id="top-book" x-data="top-book" x-data>
-      <h1>Top Booked</h1>
-      <div class="top-book-container">
-        <template x-for="(item, index) in items" :key="index">
-          <div class="top-book-card">
-            <div class="cover">
-              <div class="rating">
-                <i class="fa-solid fa-star"></i>
-                <p x-text="item.rating"></p>
-              </div>
-              <img :src="`img/top-book/${item.img}`" :alt="item.name" />
-            </div>
-            <div class="desc">
-              <div class="title">
-                <h2 x-text="item.name"></h2>
-                <div class="loc">
-                  <i class="fa-solid fa-location-dot"></i>
-                  <p x-text="item.loc"></p>
-                </div>
-              </div>
-              <p class="price" x-text="item.price"></p>
-            </div>
-          </div>
-        </template>
       </div>
     </section>
   </body>
