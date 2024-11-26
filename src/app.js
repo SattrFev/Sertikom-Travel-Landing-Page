@@ -75,4 +75,29 @@ document.addEventListener("alpine:init", () => {
       },
     ],
   }));
+  Alpine.data("news", () => ({
+    news: [
+      {
+        id: 1,
+        img: "stock1.jpg",
+        title: "Delicous resort at Hanelei",
+        date: "February 14, 2024",
+        desc: "Experience the breathtaking beauty of Hanalei Bay at our luxurious beachfront resort featuring world-class amenities and stunning ocean views.",
+      },
+      {
+        id: 2,
+        img: "stock2.jpg",
+        title: "New Luxury Villa Opens in Maldives",
+        date: "February 12, 2024",
+        desc: "Experience ultimate luxury at our newest overwater villa featuring private pools and stunning ocean views.",
+      },
+      {
+        id: 3,
+        img: "stock3.jpg",
+        title: "Sustainable Tourism Initiative Launched",
+        date: "February 10, 2024",
+        desc: "Our new eco-friendly program aims to preserve natural beauty while providing unforgettable experiences.",
+      },
+    ],
+  }));
 });

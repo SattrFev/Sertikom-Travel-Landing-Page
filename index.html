@@ -127,6 +127,70 @@
       </div>
     </section>
 
+    <section id="ourpartners">
+      <h1>Our Partners</h1>
+      <div class="swiper partners-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo1.png" alt="Partner 1" />
+            <h2>The Nook</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo2.png" alt="Partner 2" />
+            <h2>Hideaway</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo3.png" alt="Partner 3" />
+            <h2>Serendipity</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo4.png" alt="Partner 4" />
+            <h2>Cozybnb</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo5.png" alt="Partner 5" />
+            <h2>Travelx</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo6.png" alt="Partner 6" />
+            <h2>Earthly</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo7.png" alt="Partner 7" />
+            <h2>Homage</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo8.png" alt="Partner 8" />
+            <h2>Wanderlust</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo9.png" alt="Partner 9" />
+            <h2>Skybound</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo1.png" alt="Partner 10" />
+            <h2>Voyager</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo6.png" alt="Partner 11" />
+            <h2>Nomad</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo6.png" alt="Partner 12" />
+            <h2>Compass</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo2.png" alt="Partner 1" />
+            <h2>The Nook</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo2.png" alt="Partner 2" />
+            <h2>Hideaway</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="top-book" x-data="bookPlaces">
       <h1>Top Booked</h1>
       <div class="top-book-container">
@@ -164,46 +228,139 @@
       </div>
     </section>
 
-    <section id="ourpartners">
-      <h1>Our Partners</h1>
-      <div class="swiper partners-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo1.png" alt="Partner 1" />
-            <h2>The Nook</h2>
+    <section id="banner">
+      <div class="banner-container">
+        <h1>Explore Maldives</h1>
+        <div class="desc">
+          <div class="title">
+            <p>
+              Experience the ultimate luxury in the Maldives with our exclusive
+              offers and indulge in pristine beaches, crystal-clear waters, and
+              world-class hospitality.
+            </p>
+            <button>Book now <i class="fa-solid fa-arrow-right"></i></button>
           </div>
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo2.png" alt="Partner 2" />
-            <h2>Hideaway</h2>
+          <div class="potraits">
+            <div class="potrait">
+              <div class="cover">
+                <img src="img/maldives/potrait1.jpg" alt="potr-1" />
+              </div>
+              <h3 class="descx">Azure Haven</h3>
+            </div>
+
+            <div class="potrait">
+              <div class="cover">
+                <img src="img/maldives/potrait3.jpg" alt="potr-1" />
+              </div>
+              <h3 class="descx">Verdant Vista</h3>
+            </div>
+
+            <div class="potrait">
+              <div class="cover">
+                <img src="img/maldives/potrait2.jpg" alt="potr-1" />
+              </div>
+              <h3 class="descx">Serene Paradise</h3>
+            </div>
           </div>
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo3.png" alt="Partner 3" />
-            <h2>Serenpidity</h2>
+        </div>
+      </div>
+    </section>
+
+    <section id="news" x-data="news">
+      <div class="news-container">
+        <h1>Future News</h1>
+        <div class="news-swiper">
+          <template x-for="item in news" x-key="item.id">
+            <div class="news-card">
+              <div class="cover">
+                <img :src="`img/news/${item.img}`" alt="news-1" />
+              </div>
+              <div class="desc">
+                <p class="date" x-text="item.date">
+                  <i class="fa-regular fa-calendar"></i>
+                </p>
+                <h2 x-text="item.title"></h2>
+                <p class="desc-text" x-text="item.desc"></p>
+                <button>
+                  <i class="fa-solid fa-greater-than"></i>See more
+                </button>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <h1>Testimonials</h1>
+      <div class="testimonials-container">
+        <div class="testimonial-card">
+          <div class="profile">
+            <img src="img/terstimonials/test1.jpg" alt="asd" />
           </div>
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo3.png" alt="Partner 3" />
-            <h2>Serenpidity</h2>
+          <div class="title">
+            <div class="name">
+              <h4>Ayane</h4>
+              <p>Actor</p>
+            </div>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
           </div>
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo4.png" alt="Partner 4" />
-            <h2>Cozybnb</h2>
+          <p class="comments">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+            ipsam, pariatur ex perspiciatis est quasi excepturi.
+          </p>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="profile">
+            <img src="img/terstimonials/test2.jpg" alt="asd" />
           </div>
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo5.png" alt="Partner 5" />
-            <h2>Travelx</h2>
+          <div class="title">
+            <div class="name">
+              <h4>Naomi</h4>
+              <p>Student with gf</p>
+            </div>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
           </div>
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo6.png" alt="Partner 6" />
-            <h2>Earthly</h2>
+          <p class="comments">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+            ipsam, pariatur ex perspiciatis est quasi excepturi.
+          </p>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="profile">
+            <img src="img/terstimonials/test3.png" alt="asd" />
           </div>
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo7.png" alt="Partner 7" />
-            <h2>Homage</h2>
+          <div class="title">
+            <div class="name">
+              <h4>Denji</h4>
+              <p>Average guy</p>
+            </div>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
           </div>
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo7.png" alt="Partner 7" />
-            <h2>Homage</h2>
-          </div>
+          <p class="comments">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+            ipsam, pariatur ex perspiciatis est quasi excepturi.
+          </p>
         </div>
       </div>
     </section>

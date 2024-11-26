@@ -1,38 +1,3 @@
-document.addEventListener("alpine:init", () => {
-  Alpine.data("topBook", () => ({
-    items: [
-      {
-        name: "Luxury Villa Bali",
-        loc: "Bali, Indonesia",
-        rating: "4.9",
-        price: "$299/night",
-        img: "villa1.jpg",
-      },
-      {
-        name: "Beachfront Resort",
-        loc: "Maldives",
-        rating: "4.8",
-        price: "$399/night",
-        img: "resort1.jpg",
-      },
-      {
-        name: "Mountain Cabin",
-        loc: "Swiss Alps",
-        rating: "4.7",
-        price: "$199/night",
-        img: "cabin1.jpg",
-      },
-      {
-        name: "City Apartment",
-        loc: "Paris, France",
-        rating: "4.6",
-        price: "$249/night",
-        img: "apartment1.jpg",
-      },
-    ],
-  }));
-});
-
 const greetings = [
   { text: "Good Morning", lang: "English" },
   { text: "Selamat Pagi", lang: "Indonesian" },
@@ -53,6 +18,12 @@ const partnersSwiper = new Swiper(".partners-container", {
   slidesPerView: "auto",
   spaceBetween: 64,
   centeredSlides: false,
+  loop: true,
+  autoplay: {
+    delay: 0,
+    disableOnInteraction: false,
+  },
+  speed: 4000,
 });
 
 // Add scroll handler for navbar darkening
