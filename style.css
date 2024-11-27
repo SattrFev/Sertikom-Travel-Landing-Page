@@ -298,6 +298,8 @@ nav li .search-box input::placeholder {
 /* ============== About Us ============== */
 
 #aboutus {
+  display: flex;
+  justify-content: center;
   margin-top: 8rem;
   padding: 5rem 15rem;
   width: 100%;
@@ -310,7 +312,7 @@ nav li .search-box input::placeholder {
 
 #aboutus .aboutus-container {
   display: flex;
-  width: 100%;
+  width: 75vw;
   height: 100%;
   flex-direction: column;
   align-items: right;
@@ -1046,6 +1048,7 @@ nav li .search-box input::placeholder {
 
 #contact .contact-container {
   display: flex;
+  transition: width 0.2s ease-in-out;
   width: 75vw;
   height: 23rem;
   overflow: hidden;
@@ -1228,7 +1231,8 @@ nav li .search-box input::placeholder {
 
 @media (min-width: 2000px) {
   #hero .cta,
-  #banner .banner-container {
+  #banner .banner-container,
+  #contact .contact-container {
     width: 60%;
   }
 
@@ -1243,7 +1247,8 @@ nav li .search-box input::placeholder {
 
 @media (min-width: 2120px) {
   #hero .cta,
-  #banner .banner-container {
+  #banner .banner-container,
+  #contact .contact-container {
     width: 55%;
   }
 
@@ -1253,7 +1258,8 @@ nav li .search-box input::placeholder {
 }
 @media (min-width: 2560px) {
   #hero .cta,
-  #banner .banner-container {
+  #banner .banner-container,
+  #contact .contact-container {
     width: 50%;
   }
 

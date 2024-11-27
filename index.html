@@ -45,10 +45,34 @@
             <button><i class="fas fa-search"></i></button>
           </div>
         </li>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#popular-destinations">Popular</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li>
+          <a
+            href="#hero"
+            onclick="event.preventDefault(); document.querySelector('#hero').scrollIntoView({behavior: 'smooth', block: 'center'})"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="#popular-destinations"
+            onclick="event.preventDefault(); document.querySelector('#popular-destinations').scrollIntoView({behavior: 'smooth', block: 'start'})"
+            >Popular</a
+          >
+        </li>
+        <li>
+          <a
+            href="#aboutus"
+            onclick="event.preventDefault(); document.querySelector('#aboutus').scrollIntoView({behavior: 'smooth', block: 'center'})"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact"
+            onclick="event.preventDefault(); document.querySelector('#contact').scrollIntoView({behavior: 'smooth', block: 'center'})"
+            >Contact</a
+          >
+        </li>
       </ul>
     </nav>
 
