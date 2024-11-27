@@ -1066,7 +1066,6 @@ nav li .search-box input::placeholder {
 }
 
 #contact .contact-container .form-container {
-  background-color: #00000080;
   padding: 2rem;
   width: 60%;
   display: flex;
