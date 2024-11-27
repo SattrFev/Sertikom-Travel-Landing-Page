@@ -88,3 +88,17 @@ async function updateGreeting() {
 
 greetingElement.textContent = greetings[0].text;
 setInterval(updateGreeting, 7000);
+
+const newsSwiper = new Swiper(".news-swiper", {
+  direction: "horizontal",
+  slidesPerView: "auto",
+  spaceBetween: 82,
+  loop: false,
+  navigation: {
+    nextEl: ".next",
+    prevEl: ".prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+  },
+});

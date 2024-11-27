@@ -46,11 +46,12 @@
           </div>
         </li>
         <li><a href="#hero">Home</a></li>
-        <li><a href="#">Popular</a></li>
+        <li><a href="#popular-destinations">Popular</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
+
     <section id="hero">
       <div class="cta">
         <h1 class="greeting">Good Morning!</h1>
@@ -127,72 +128,8 @@
       </div>
     </section>
 
-    <section id="ourpartners">
-      <h1>Our Partners</h1>
-      <div class="swiper partners-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo1.png" alt="Partner 1" />
-            <h2>The Nook</h2>
-          </div>
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo2.png" alt="Partner 2" />
-            <h2>Hideaway</h2>
-          </div>
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo3.png" alt="Partner 3" />
-            <h2>Serendipity</h2>
-          </div>
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo4.png" alt="Partner 4" />
-            <h2>Cozybnb</h2>
-          </div>
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo5.png" alt="Partner 5" />
-            <h2>Travelx</h2>
-          </div>
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo6.png" alt="Partner 6" />
-            <h2>Earthly</h2>
-          </div>
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo7.png" alt="Partner 7" />
-            <h2>Homage</h2>
-          </div>
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo8.png" alt="Partner 8" />
-            <h2>Wanderlust</h2>
-          </div>
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo9.png" alt="Partner 9" />
-            <h2>Skybound</h2>
-          </div>
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo1.png" alt="Partner 10" />
-            <h2>Voyager</h2>
-          </div>
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo6.png" alt="Partner 11" />
-            <h2>Nomad</h2>
-          </div>
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo6.png" alt="Partner 12" />
-            <h2>Compass</h2>
-          </div>
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo2.png" alt="Partner 1" />
-            <h2>The Nook</h2>
-          </div>
-          <div class="swiper-slide partner-card">
-            <img src="img/partners/logo2.png" alt="Partner 2" />
-            <h2>Hideaway</h2>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="top-book" x-data="bookPlaces">
-      <h1>Top Booked</h1>
+      <h1 id="popular-destinations">Popular Destinations</h1>
       <div class="top-book-container">
         <template x-for="(item, index) in items" x-key="index">
           <div class="card">
@@ -268,30 +205,58 @@
 
     <section id="news" x-data="news">
       <div class="news-container">
-        <h1>Future News</h1>
-        <div class="news-swiper">
-          <template x-for="item in news" x-key="item.id">
-            <div class="news-card">
-              <div class="cover">
-                <img :src="`img/news/${item.img}`" alt="news-1" />
+        <div class="title">
+          <h1>Future News</h1>
+          <div class="slide-btn">
+            <button class="next">
+              <i class="fa-solid fa-greater-than"></i>
+            </button>
+            <button class="prev"><i class="fa-solid fa-less-than"></i></button>
+          </div>
+        </div>
+        <div class="swiper news-swiper">
+          <div class="swiper-wrapper">
+            <template x-for="item in news" x-key="item.id">
+              <div class="swiper-slide news-card">
+                <div class="cover">
+                  <img :src="`img/news/${item.img}`" alt="news-1" />
+                </div>
+                <div class="desc">
+                  <p class="date" x-text="item.date">
+                    <i class="fa-regular fa-calendar"></i>
+                  </p>
+                  <h2 x-text="item.title"></h2>
+                  <p class="desc-text" x-text="item.desc"></p>
+                  <button>
+                    <i class="fa-solid fa-greater-than"></i>See more
+                  </button>
+                </div>
               </div>
-              <div class="desc">
-                <p class="date" x-text="item.date">
-                  <i class="fa-regular fa-calendar"></i>
-                </p>
-                <h2 x-text="item.title"></h2>
-                <p class="desc-text" x-text="item.desc"></p>
-                <button>
-                  <i class="fa-solid fa-greater-than"></i>See more
-                </button>
-              </div>
-            </div>
-          </template>
+            </template>
+          </div>
+          <div class="swiper-pagination"></div>
+          <!--  -->
         </div>
       </div>
     </section>
 
-    <section id="testimonials">
+    <section id="aboutus">
+      <div class="aboutus-container">
+        <div class="desc">
+          <p>About Us</p>
+          <h1>ExproTravel</h1>
+          <h3>
+            Founded in 2008 by Ryan Airy. ExproTravel focusing on providing the
+            best travel experience for our customers. overtime, it has grown
+            into a community of travel enthusiasts who are passionate about
+            sharing their experiences with others.
+          </h3>
+          <button>View Gallery<i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section id="testimonials">
       <h1>Testimonials</h1>
       <div class="testimonials-container">
         <div class="testimonial-card">
@@ -361,6 +326,146 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
             ipsam, pariatur ex perspiciatis est quasi excepturi.
           </p>
+        </div>
+      </div>
+    </section> -->
+
+    <section id="contact">
+      <h1>Contact Us</h1>
+      <div class="contact-container">
+        <div class="cover"></div>
+        <div class="form-container">
+          <form action="submit">
+            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <textarea placeholder="Message" rows="5"></textarea>
+            <button>Send</button>
+          </form>
+          <div class="contact-information">
+            <div class="email">
+              <h1>Contact</h1>
+              <p>hi@exprotravel.com</p>
+            </div>
+            <div class="based">
+              <h1>Based in</h1>
+              <p>New York, USA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ourpartners">
+      <!-- <h1>Our Partners</h1> -->
+      <div class="swiper partners-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo1.png" alt="Partner 1" />
+            <h2>The Nook</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo2.png" alt="Partner 2" />
+            <h2>Hideaway</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo3.png" alt="Partner 3" />
+            <h2>Serendipity</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo4.png" alt="Partner 4" />
+            <h2>Cozybnb</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo5.png" alt="Partner 5" />
+            <h2>Travelx</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo6.png" alt="Partner 6" />
+            <h2>Earthly</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo7.png" alt="Partner 7" />
+            <h2>Homage</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo8.png" alt="Partner 8" />
+            <h2>Wanderlust</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo9.png" alt="Partner 9" />
+            <h2>Skybound</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo1.png" alt="Partner 10" />
+            <h2>Voyager</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo6.png" alt="Partner 11" />
+            <h2>Nomad</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo6.png" alt="Partner 12" />
+            <h2>Compass</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo2.png" alt="Partner 1" />
+            <h2>The Nook</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo2.png" alt="Partner 2" />
+            <h2>Hideaway</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="footer">
+      <div class="footer-container">
+        <div class="support">
+          <h3>Support</h3>
+          <a href="#">Terms of Service</a>
+          <a href="#">Safety Information</a>
+          <a href="#">Cancellation Options </a>
+        </div>
+        <div class="company">
+          <h3>Company</h3>
+          <a href="#">About Us</a>
+          <a href="#">Our Partners</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+        </div>
+        <div class="contact">
+          <h3>Contact</h3>
+          <a href="#">FAQ</a>
+          <a href="#">Get in touch</a>
+          <a href="#">Partnerships</a>
+        </div>
+        <div class="socials">
+          <h3>Socials</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2024 ExproTravel. All rights reserved.</p>
+        <div class="payment-icons">
+          <div class="payment-card">
+            <img
+              height="100%"
+              src="img/payment/mastercard.png"
+              alt="payment-1"
+            />
+          </div>
+          <div class="payment-card">
+            <img height="100%" src="img/payment/paypal.png" alt="payment-2" />
+          </div>
+          <div class="payment-card">
+            <img height="60%" src="img/payment/visa.png" alt="payment-3" />
+          </div>
         </div>
       </div>
     </section>
