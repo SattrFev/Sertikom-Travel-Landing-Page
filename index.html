@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="img/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ExproTravel</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+    <script src="src/app.js"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <nav id="nav">
+      <a class="logo" href="#">ExproTravel</a>
+      <ul>
+        <li>
+          <div class="search-box">
+            <input type="text" placeholder="Search..." />
+            <button><i class="fas fa-search"></i></button>
+          </div>
+        </li>
+        <li>
+          <a
+            href="#hero"
+            onclick="event.preventDefault(); document.querySelector('#hero').scrollIntoView({behavior: 'smooth', block: 'center'})"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="#popular-destinations"
+            onclick="event.preventDefault(); document.querySelector('#popular-destinations').scrollIntoView({behavior: 'smooth', block: 'start'})"
+            >Popular</a
+          >
+        </li>
+        <li>
+          <a
+            href="#aboutus"
+            onclick="event.preventDefault(); document.querySelector('#aboutus').scrollIntoView({behavior: 'smooth', block: 'start'})"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact"
+            onclick="event.preventDefault(); document.querySelector('#contact').scrollIntoView({behavior: 'smooth', block: 'center'})"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <section id="hero">
+      <div class="cta">
+        <h1 class="greeting">Good Morning!</h1>
+        <p class="cta-text">
+          Explore the world in ease with <span>ExproTravel</span>
+        </p>
+        <div class="cta-book">
+          <div class="parameters">
+            <div class="location">
+              <i class="fa-regular fa-compass"></i>
+              <div class="desc">
+                <h3>Location</h3>
+                <p>Add destination</p>
+              </div>
+            </div>
+            <div class="checkin">
+              <i class="fa-regular fa-calendar"></i>
+              <div class="desc">
+                <h3>Check in</h3>
+                <p>Add dates</p>
+              </div>
+            </div>
+            <div class="checkout">
+              <i class="fa-regular fa-calendar"></i>
+              <div class="desc">
+                <h3>Check out</h3>
+                <p>Add dates</p>
+              </div>
+            </div>
+            <div class="guests">
+              <i class="fa-regular fa-user"></i>
+              <div class="desc">
+                <h3>Guests</h3>
+                <p>Add guests</p>
+              </div>
+            </div>
+          </div>
+          <button class="search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="aboutus">
+      <!-- <h1>About ExproTravel</h1> -->
+      <div class="aboutus-container">
+        <div class="images">
+          <div class="image1"></div>
+          <div class="image2"></div>
+          <div class="image3"></div>
+        </div>
+        <div class="desc">
+          <h2>ExproTravel</h2>
+          <h3>We are world reputed travel agency</h3>
+          <p>
+            Kami adalah ExproTravel sebuah tim yang berdedikasi untuk membantu
+            Anda menjelajahi dunia dengan cara yang lebih mudah, nyaman, dan
+            berkesan. Dengan pengalaman bertahun-tahun di industri travel, kami
+            telah membantu ribuan orang menemukan destinasi impian mereka.
+          </p>
+          <p>
+            Kami percaya bahwa setiap perjalanan adalah kesempatan untuk
+            menciptakan kenangan baru, dan itulah mengapa kami memastikan setiap
+            detail direncanakan dengan sempurna. kami memberikan solusi
+            perjalanan yang sesuai dengan keinginan Anda. Komitmen kami adalah
+            memberikan layanan terbaik, mulai dari proses perencanaan hingga
+            Anda kembali dengan senyuman puas.
+          </p>
+          <div class="competitive-price">
+            <div class="icon">
+              <i class="fa-solid fa-dollar-sign"></i>
+            </div>
+            <div class="desc">
+              <h3>Competitive Price</h3>
+              <p>
+                We offer competitive prices for all our services, ensuring that
+                you get the best value for your money.
+              </p>
+            </div>
+          </div>
+
+          <div class="competitive-price">
+            <div class="icon">
+              <i class="fa-solid fa-handshake"></i>
+            </div>
+            <div class="desc">
+              <h3>Seamless Experience</h3>
+              <p>
+                We provide a seamless experience for all our customers, from
+                booking to travel.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section id="whychooseus">
+      <h1>Why choosing us?</h1>
+      <div class="reason-card">
+        <div class="comp-price">
+          <i class="fa-solid fa-dollar-sign"></i>
+          <h2>Competitive Price</h2>
+          <p>
+            We offer competitive prices for all our services, ensuring that you
+            get the best value for your money.
+          </p>
+        </div>
+
+        <div class="secure-booking">
+          <i class="fa-solid fa-lock"></i>
+          <h2>Secure Booking</h2>
+          <p>
+            We ensure that your booking process is secure and protected, so you
+            can book with confidence.
+          </p>
+        </div>
+
+        <div class="seamless-experience">
+          <i class="fa-solid fa-handshake"></i>
+          <h2>Seamless Experience</h2>
+          <p>
+            We provide a seamless experience for all our customers, from booking
+            to travel.
+          </p>
+        </div>
+      </div>
+    </section> -->
+
+    <section id="top-book" x-data="bookPlaces">
+      <h1 id="popular-destinations">Popular Destinations</h1>
+      <div class="top-book-container">
+        <template x-for="(item, index) in items" x-key="index">
+          <div class="card">
+            <div
+              :style="{
+                backgroundImage: `url(img/top-book/${item.img})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }"
+              class="cover"
+            >
+              <div class="rating">
+                <i class="fa-solid fa-star"></i>
+                <p x-text="item.rating"></p>
+              </div>
+            </div>
+            <div class="desc">
+              <div class="title">
+                <h2 x-text="item.name"></h2>
+                <div class="loc">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <p x-text="item.loc"></p>
+                </div>
+              </div>
+              <div class="price-container">
+                <h2 class="price" x-text="formatNumber(item.price)"></h2>
+                <p>/ person</p>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+      <div class="view-more">
+        <a href="#">See all</a>
+        <i class="fa-solid fa-arrow-right"></i>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <h1>Testimonials</h1>
+      <div class="testimonials-container">
+        <div class="testimonial-card">
+          <div class="profile">
+            <img src="img/terstimonials/stock2.png" alt="asd" />
+          </div>
+          <div class="title">
+            <div class="name">
+              <h4>Audi Marcedez</h4>
+              <p>Single Student</p>
+            </div>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="comments">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+            ipsam, pariatur ex perspiciatis est quasi excepturi.
+          </p>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="profile">
+            <img src="img/terstimonials/stock1.jpg" alt="asd" />
+          </div>
+          <div class="title">
+            <div class="name">
+              <h4>Robert</h4>
+              <p>Office Worker</p>
+            </div>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="comments">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+            ipsam, pariatur ex perspiciatis est quasi excepturi.
+          </p>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="profile">
+            <img src="img/terstimonials/stock3.jpg" alt="asd" />
+          </div>
+          <div class="title">
+            <div class="name">
+              <h4>Nana</h4>
+              <p>Debater</p>
+            </div>
+            <div class="rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <p class="comments">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+            ipsam, pariatur ex perspiciatis est quasi excepturi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="banner">
+      <div class="banner-container">
+        <h1>Explore Maldives</h1>
+        <div class="desc">
+          <div class="title">
+            <p>
+              Experience the ultimate luxury in the Maldives with our exclusive
+              offers and indulge in pristine beaches, crystal-clear waters, and
+              world-class hospitality.
+            </p>
+            <button>Book now <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+          <div class="potraits">
+            <div class="potrait">
+              <div class="cover">
+                <img src="img/maldives/potrait1.jpg" alt="potr-1" />
+              </div>
+              <h3 class="descx">Azure Haven</h3>
+            </div>
+
+            <div class="potrait">
+              <div class="cover">
+                <img src="img/maldives/potrait3.jpg" alt="potr-1" />
+              </div>
+              <h3 class="descx">Verdant Vista</h3>
+            </div>
+
+            <div class="potrait">
+              <div class="cover">
+                <img src="img/maldives/potrait2.jpg" alt="potr-1" />
+              </div>
+              <h3 class="descx">Serene Paradise</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="news" x-data="news">
+      <div class="news-container">
+        <div class="title">
+          <h1>Future News</h1>
+          <div class="slide-btn">
+            <button class="next">
+              <i class="fa-solid fa-greater-than"></i>
+            </button>
+            <button class="prev"><i class="fa-solid fa-less-than"></i></button>
+          </div>
+        </div>
+        <div class="swiper news-swiper">
+          <div class="swiper-wrapper">
+            <template x-for="item in news" x-key="item.id">
+              <div class="swiper-slide news-card">
+                <div class="cover">
+                  <img :src="`img/news/${item.img}`" alt="news-1" />
+                </div>
+                <div class="desc">
+                  <p class="date" x-text="item.date">
+                    <i class="fa-regular fa-calendar"></i>
+                  </p>
+                  <h2 x-text="item.title"></h2>
+                  <p class="desc-text" x-text="item.desc"></p>
+                  <button>
+                    <i class="fa-solid fa-greater-than"></i>See more
+                  </button>
+                </div>
+              </div>
+            </template>
+          </div>
+          <div class="swiper-pagination"></div>
+          <!--  -->
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h1>Contact Us</h1>
+      <div class="contact-container">
+        <div class="cover"></div>
+        <div class="form-container">
+          <form action="submit">
+            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <textarea placeholder="Message" rows="5"></textarea>
+            <button>Send</button>
+          </form>
+          <div class="contact-information">
+            <div class="email">
+              <h1>Contact</h1>
+              <p>hi@exprotravel.com</p>
+              <p>support@exprotravel.com</p>
+              <p>bookings@exprotravel.com</p>
+            </div>
+            <div class="based">
+              <h1>Based in</h1>
+              <p>123 Sunset Boulevard</p>
+              <p>Los Angeles, CA 90028</p>
+              <p>United States</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ourpartners">
+      <!-- <h1>Our Partners</h1> -->
+      <div class="swiper partners-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo1.png" alt="Partner 1" />
+            <h2>The Nook</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo2.png" alt="Partner 2" />
+            <h2>Hideaway</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo3.png" alt="Partner 3" />
+            <h2>Serendipity</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo4.png" alt="Partner 4" />
+            <h2>Cozybnb</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo5.png" alt="Partner 5" />
+            <h2>Travelx</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo6.png" alt="Partner 6" />
+            <h2>Earthly</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo7.png" alt="Partner 7" />
+            <h2>Homage</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo8.png" alt="Partner 8" />
+            <h2>Wanderlust</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo9.png" alt="Partner 9" />
+            <h2>Skybound</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo1.png" alt="Partner 10" />
+            <h2>Voyager</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo6.png" alt="Partner 11" />
+            <h2>Nomad</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo6.png" alt="Partner 12" />
+            <h2>Compass</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo2.png" alt="Partner 1" />
+            <h2>The Nook</h2>
+          </div>
+          <div class="swiper-slide partner-card">
+            <img src="img/partners/logo2.png" alt="Partner 2" />
+            <h2>Hideaway</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="footer">
+      <div class="footer-container">
+        <div class="support">
+          <h3>Support</h3>
+          <a href="#">Terms of Service</a>
+          <a href="#">Safety Information</a>
+          <a href="#">Cancellation Options </a>
+        </div>
+        <div class="company">
+          <h3>Company</h3>
+          <a href="#">About Us</a>
+          <a href="#">Our Partners</a>
+          <a href="#">Careers</a>
+          <a href="#">Press</a>
+        </div>
+        <div class="contact">
+          <h3>Contact</h3>
+          <a href="#">FAQ</a>
+          <a href="#">Get in touch</a>
+          <a href="#">Partnerships</a>
+        </div>
+        <div class="socials">
+          <h3>Socials</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2024 ExproTravel. All rights reserved.</p>
+        <div class="payment-icons">
+          <div class="payment-card">
+            <img
+              height="100%"
+              src="img/payment/mastercard.png"
+              alt="payment-1"
+            />
+          </div>
+          <div class="payment-card">
+            <img height="100%" src="img/payment/paypal.png" alt="payment-2" />
+          </div>
+          <div class="payment-card">
+            <img height="60%" src="img/payment/visa.png" alt="payment-3" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
