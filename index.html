@@ -76,7 +76,7 @@
       </ul>
     </nav>
 
-    <section id="hero">
+    <!-- <section id="hero">
       <div class="cta">
         <h1 class="greeting">Good Morning!</h1>
         <p class="cta-text">
@@ -118,10 +118,9 @@
           </button>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <section id="aboutus">
-      <!-- <h1>About ExproTravel</h1> -->
+    <!-- <section id="aboutus">
       <div class="aboutus-container">
         <div class="images">
           <div class="image1"></div>
@@ -172,7 +171,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- <section id="whychooseus">
       <h1>Why choosing us?</h1>
@@ -206,51 +205,54 @@
       </div>
     </section> -->
 
-    <section id="top-book" x-data="bookPlaces">
+    <!-- <section id="top-book" x-data="bookPlaces">
       <h1 id="popular-destinations">Popular Destinations</h1>
-      <div class="top-book-container">
-        <template x-for="(item, index) in items" x-key="index">
-          <div class="card">
-            <div
-              :style="{
+      <div class="swiper top-book-container">
+        <div class="swiper-wrapper">
+          <template x-for="(item, index) in items" x-key="index">
+            <div class="swiper-slide card">
+              <div
+                :style="{
                 backgroundImage: `url(img/top-book/${item.img})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }"
-              class="cover"
-            >
-              <div class="rating">
-                <i class="fa-solid fa-star"></i>
-                <p x-text="item.rating"></p>
-              </div>
-              <div class="place-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
-                eaque rerum sed?
-              </div>
-            </div>
-            <div class="desc">
-              <div class="title">
-                <h2 x-text="item.name"></h2>
-                <div class="loc">
-                  <i class="fa-solid fa-location-dot"></i>
-                  <p x-text="item.loc"></p>
+                class="cover"
+              >
+                <div class="rating">
+                  <i class="fa-solid fa-star"></i>
+                  <p x-text="item.rating"></p>
+                </div>
+                <div class="place-desc">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                  eaque rerum sed?
                 </div>
               </div>
-              <div class="price-container">
-                <h2 class="price" x-text="formatNumber(item.price)"></h2>
-                <p>/ person</p>
+              <div class="desc">
+                <div class="title">
+                  <h2 x-text="item.name"></h2>
+                  <div class="loc">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p x-text="item.loc"></p>
+                  </div>
+                </div>
+                <div class="price-container">
+                  <h2 class="price" x-text="formatNumber(item.price)"></h2>
+                  <p>/ person</p>
+                </div>
               </div>
             </div>
-          </div>
-        </template>
+          </template>
+        </div>
+        <div class="swiper-pagination"></div>
       </div>
       <div class="view-more">
         <a href="#">See all</a>
         <i class="fa-solid fa-arrow-right"></i>
       </div>
-    </section>
+    </section> -->
 
-    <section id="testimonials">
+    <!-- <section id="testimonials">
       <h1>Testimonials</h1>
       <div class="testimonials-container">
         <div class="testimonial-card">
@@ -322,41 +324,37 @@
           </p>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <section id="news" x-data="news">
-      <div class="news-container">
-        <div class="title">
-          <h1>Future News</h1>
-          <div class="slide-btn">
-            <button class="next">
-              <i class="fa-solid fa-greater-than"></i>
-            </button>
-            <button class="prev"><i class="fa-solid fa-less-than"></i></button>
-          </div>
-        </div>
-        <div class="swiper news-swiper">
-          <div class="swiper-wrapper">
-            <template x-for="item in news" x-key="item.id">
-              <div class="swiper-slide news-card">
-                <div class="cover">
-                  <img :src="`img/news/${item.img}`" alt="news-1" />
-                </div>
-                <div class="desc">
-                  <p class="date" x-text="item.date">
-                    <i class="fa-regular fa-calendar"></i>
-                  </p>
-                  <h2 x-text="item.title"></h2>
-                  <p class="desc-text" x-text="item.desc"></p>
-                  <button>
-                    <i class="fa-solid fa-greater-than"></i>See more
-                  </button>
-                </div>
+    <section id="plans">
+      <div class="plans-container">
+        <h1>Plans</h1>
+        <div class="plans-card-basic">
+          <div class="desc">
+            <div class="div-title">
+              <h2>Basic</h2>
+              <div class="max-pax">
+                <i class="fa-solid fa-user"></i>
+                <p>1+</p>
               </div>
-            </template>
+            </div>
+            <p class="desc-text">
+              Perfect for solo travelers or couples looking for a
+              budget-friendly option.
+            </p>
+            <div class="price">
+              <h1>$241</h1>
+              <p>/ per day</p>
+            </div>
+            <button class="choose-btn">Choose</button>
+            <div class="benefits">
+              <div class="checkk">
+                <i class="fa-solid fa-check"></i>
+                <p>Breakfast</p>
+              </div>
+            </div>
+            <button>Learn More <i class="fa-solid fa-arrow-right"></i></button>
           </div>
-          <div class="swiper-pagination"></div>
-          <!--  -->
         </div>
       </div>
     </section>
@@ -399,7 +397,7 @@
       </div>
     </section>
 
-    <section id="contact">
+    <!-- <section id="contact">
       <h1>Contact Us</h1>
       <div class="contact-container">
         <div class="cover"></div>
@@ -426,10 +424,10 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <section id="ourpartners">
-      <!-- <h1>Our Partners</h1> -->
+    <!-- <section id="ourpartners">
+      <h1>Our Partners</h1>
       <div class="swiper partners-container">
         <div class="swiper-wrapper">
           <div class="swiper-slide partner-card">
@@ -490,9 +488,9 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <section id="footer">
+    <!-- <section id="footer">
       <div class="footer-container">
         <div class="support">
           <h3>Support</h3>
@@ -541,6 +539,6 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
   </body>
 </html>

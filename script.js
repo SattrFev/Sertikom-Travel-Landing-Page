@@ -102,3 +102,27 @@ const newsSwiper = new Swiper(".news-swiper", {
     el: ".swiper-pagination",
   },
 });
+
+var topBookSwiper = new Swiper(".top-book-container", {
+  direction: "horizontal",
+  slidesPerView: "auto",
+  spaceBetween: 20,
+  loop: false,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
+
+function toggleTopBookSlider(disabled = false) {
+  const swiperContainer = document.querySelector(".top-book-container");
+  const swiper = swiperContainer.swiper;
+
+  if (disabled) {
+    swiper.disable(); // Disable swiping functionality
+    swiper.el.classList.add("swiper-no-scroll");
+  } else {
+    swiper.enable(); // Re-enable swiping functionality
+    swiper.el.classList.remove("swiper-no-scroll");
+  }
+}
