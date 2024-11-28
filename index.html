@@ -223,6 +223,10 @@
                 <i class="fa-solid fa-star"></i>
                 <p x-text="item.rating"></p>
               </div>
+              <div class="place-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius
+                eaque rerum sed?
+              </div>
             </div>
             <div class="desc">
               <div class="title">
@@ -320,6 +324,43 @@
       </div>
     </section>
 
+    <section id="news" x-data="news">
+      <div class="news-container">
+        <div class="title">
+          <h1>Future News</h1>
+          <div class="slide-btn">
+            <button class="next">
+              <i class="fa-solid fa-greater-than"></i>
+            </button>
+            <button class="prev"><i class="fa-solid fa-less-than"></i></button>
+          </div>
+        </div>
+        <div class="swiper news-swiper">
+          <div class="swiper-wrapper">
+            <template x-for="item in news" x-key="item.id">
+              <div class="swiper-slide news-card">
+                <div class="cover">
+                  <img :src="`img/news/${item.img}`" alt="news-1" />
+                </div>
+                <div class="desc">
+                  <p class="date" x-text="item.date">
+                    <i class="fa-regular fa-calendar"></i>
+                  </p>
+                  <h2 x-text="item.title"></h2>
+                  <p class="desc-text" x-text="item.desc"></p>
+                  <button>
+                    <i class="fa-solid fa-greater-than"></i>See more
+                  </button>
+                </div>
+              </div>
+            </template>
+          </div>
+          <div class="swiper-pagination"></div>
+          <!--  -->
+        </div>
+      </div>
+    </section>
+
     <section id="banner">
       <div class="banner-container">
         <h1>Explore Maldives</h1>
@@ -354,43 +395,6 @@
               <h3 class="descx">Serene Paradise</h3>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="news" x-data="news">
-      <div class="news-container">
-        <div class="title">
-          <h1>Future News</h1>
-          <div class="slide-btn">
-            <button class="next">
-              <i class="fa-solid fa-greater-than"></i>
-            </button>
-            <button class="prev"><i class="fa-solid fa-less-than"></i></button>
-          </div>
-        </div>
-        <div class="swiper news-swiper">
-          <div class="swiper-wrapper">
-            <template x-for="item in news" x-key="item.id">
-              <div class="swiper-slide news-card">
-                <div class="cover">
-                  <img :src="`img/news/${item.img}`" alt="news-1" />
-                </div>
-                <div class="desc">
-                  <p class="date" x-text="item.date">
-                    <i class="fa-regular fa-calendar"></i>
-                  </p>
-                  <h2 x-text="item.title"></h2>
-                  <p class="desc-text" x-text="item.desc"></p>
-                  <button>
-                    <i class="fa-solid fa-greater-than"></i>See more
-                  </button>
-                </div>
-              </div>
-            </template>
-          </div>
-          <div class="swiper-pagination"></div>
-          <!--  -->
         </div>
       </div>
     </section>
