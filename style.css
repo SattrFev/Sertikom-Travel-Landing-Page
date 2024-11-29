@@ -51,7 +51,7 @@ nav {
   display: flex;
   position: fixed;
   inset: 1rem 1rem auto 1rem;
-  z-index: 100;
+  z-index: 1000;
   border-radius: 1rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
   justify-content: space-between;
@@ -276,7 +276,6 @@ nav li .search-box input::placeholder {
   border-radius: 50%;
   width: 3.5rem;
   height: 3.5rem;
-  min-width: 3.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1529,11 +1528,321 @@ nav li .search-box input::placeholder {
   padding: 0.2rem;
 }
 
+#nav .hamburger {
+  display: none;
+}
+
+#nav .hamburger i {
+  font-size: 1.5rem;
+  color: rgb(0, 0, 0);
+  transition: color 0.3s ease-in-out;
+}
+
+#nav .hamburger.nav-dark i {
+  color: var(--text-color);
+}
+
+#hero .cta-book input {
+  display: none;
+}
+
+#aboutus .aboutus-container .desc .p-images-phone,
+#aboutus .aboutus-container .desc .p-images-phone2 {
+  display: none;
+}
+
 /* Media Queries */
-
-/* Iphone Se */
-
 /* Iphone XR */
+@media (max-width: 414px) {
+  * {
+    font-size: 80%;
+  }
+
+  #nav {
+    border-radius: 0;
+    top: -1px;
+    left: 0px;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1.2rem;
+    width: 100vw;
+  }
+
+  #nav.active ul {
+    right: 0%;
+  }
+  #nav ul {
+    position: absolute;
+    top: 1%;
+    right: -100%;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 3rem 1.2rem;
+    background-color: #fff;
+    width: 14rem;
+    height: 100vh;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -5px 2px 77px -22px rgba(0, 0, 0, 0.75);
+  }
+
+  #nav ul li a {
+    color: var(--text-color);
+    margin-left: 1rem;
+  }
+
+  #nav ul li .search-box {
+    border-radius: 0px;
+    width: 100%;
+  }
+
+  #nav ul li .search-box button {
+    display: none;
+  }
+
+  #nav .hamburger {
+    display: block;
+  }
+
+  /* Hero */
+  #hero {
+    height: 55vh;
+    background-position: center 80%;
+    background-size: 140%;
+  }
+
+  #hero .cta {
+    transform: translateY(35%);
+    justify-content: center;
+    width: 90vw;
+  }
+
+  #hero .cta .greeting {
+    font-size: 3rem;
+  }
+
+  #hero .cta .cta-text {
+    font-size: 1.7rem;
+  }
+
+  #hero .cta .cta-text span {
+    font-size: 1.6rem;
+  }
+
+  #hero .cta .cta-book {
+    margin-top: rem;
+    height: 10vh;
+  }
+
+  #hero .cta-book .parameters {
+    display: none;
+  }
+
+  #hero .cta-book .search-btn {
+    height: 3rem;
+    width: 4rem;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  #hero .cta-book .search-btn i {
+    font-size: 1rem;
+    padding: 0;
+  }
+
+  #hero .cta-book input {
+    display: block;
+    font-size: 1.3rem;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    height: 3.4rem;
+    outline: none;
+  }
+
+  #aboutus {
+    margin-top: 12rem;
+    padding: 0 2rem;
+  }
+  #aboutus .aboutus-container {
+    padding: 0 0;
+    flex-direction: column-reverse;
+  }
+
+  #aboutus .aboutus-container .images {
+    display: none;
+  }
+
+  #top-book .top-book-container .card .cover .place-desc {
+    bottom: 1px;
+    font-size: 0.8rem;
+  }
+
+  #top-book .view-more {
+    font-size: 1.5rem;
+  }
+
+  #aboutus .aboutus-container .desc {
+    width: 100%;
+    height: 100%;
+  }
+
+  #aboutus .aboutus-container .desc h2 {
+    font-size: 2rem;
+  }
+
+  #aboutus .aboutus-container .desc h3 {
+    font-size: 2.5rem;
+    width: 100%;
+  }
+
+  #aboutus .aboutus-container .desc .p-images-phone,
+  #aboutus .aboutus-container .desc .p-images-phone2 {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    padding: 0px;
+  }
+
+  #aboutus .aboutus-container .desc .p-images-phone p,
+  #aboutus .aboutus-container .desc .p-images-phone2 p {
+    margin: 0;
+    text-align: justify;
+  }
+
+  #aboutus .aboutus-container .desc .p-images-phone .image1,
+  #aboutus .aboutus-container .desc .p-images-phone2 .image1 {
+    width: 11rem;
+    height: 12.5rem;
+    border-radius: 0.5rem;
+    background-image: url(img/aboutus/about_3_1.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  #aboutus .aboutus-container .desc .p-images-phone2 .image1 {
+    height: 13rem;
+    width: 12rem;
+    background-image: url(img/aboutus/about_3_2.jpg);
+  }
+
+  #aboutus .aboutus-container .desc .p-desc {
+    display: none;
+  }
+
+  #aboutus .aboutus-container .desc .competitive-price .desc {
+    width: 75%;
+  }
+
+  #top-book {
+    margin-top: 5rem;
+  }
+
+  #banner {
+    display: none;
+  }
+
+  #plans {
+    height: 270vh;
+  }
+
+  #plans .plans-container {
+    margin-top: 4rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  #plans .plans-container .plans-card-basic .desc .bottom-desc .benefits,
+  #plans .plans-container .plans-card-pro .desc .bottom-desc .benefits,
+  #plans
+    .plans-container
+    .plans-card-enterprise
+    .desc
+    .bottom-desc
+    .benefits
+    .checkk {
+    font-size: 1.4rem;
+  }
+
+  #top-book #popular-destinations {
+    text-align: center;
+  }
+
+  #testimonials {
+    height: 130vh;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  #testimonials .testimonials-container .testimonial-card .title .rating i {
+    font-size: 1rem;
+  }
+
+  #testimonials .testimonials-container {
+    flex-wrap: wrap;
+    gap: 5rem;
+  }
+
+  #contact {
+    margin-bottom: 10rem;
+  }
+
+  #contact .contact-container {
+    flex-direction: column;
+    height: 60vh;
+  }
+
+  #contact .contact-container .cover {
+    width: 100%;
+    height: 40%;
+  }
+
+  #contact .contact-container .form-container {
+    width: 100%;
+    height: 60%;
+    flex-direction: column;
+  }
+
+  #contact .contact-container .form-container form {
+    width: 100%;
+    height: 100%;
+  }
+
+  #contact .contact-container .form-container .contact-information {
+    display: none;
+  }
+
+  #footer {
+    height: 60vw;
+    width: 100vw;
+    padding: 1rem 2rem 2rem 2rem;
+  }
+
+  #footer .footer-container {
+    overflow: visible;
+    justify-content: space-between;
+  }
+
+  #footer .footer-container .support,
+  #footer .footer-container .company,
+  #footer .footer-container .contact,
+  #footer .footer-container .socials {
+    width: 25%;
+    margin: 0;
+  }
+
+  #footer .footer-container .support a,
+  #footer .footer-container .company a,
+  #footer .footer-container .contact a {
+    font-size: 0.6rem;
+  }
+
+  #footer .footer-container .socials {
+    display: none;
+  }
+}
 
 /* Iphone 12 Pro */
 

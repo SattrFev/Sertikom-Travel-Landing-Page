@@ -74,6 +74,9 @@
           >
         </li>
       </ul>
+      <button class="hamburger" onclick="toggleHamburger()">
+        <i class="fas fa-bars"></i>
+      </button>
     </nav>
 
     <section id="hero">
@@ -83,6 +86,7 @@
           Explore the world in ease with <span>ExproTravel</span>
         </p>
         <div class="cta-book">
+          <input type="text" placeholder="Search..." />
           <div class="parameters">
             <div class="location">
               <i class="fa-regular fa-compass"></i>
@@ -130,13 +134,34 @@
         <div class="desc">
           <h2>ExproTravel</h2>
           <h3>We are world reputed travel agency</h3>
-          <p>
+          <div class="p-images-phone">
+            <div class="image1"></div>
+            <p>
+              Kami adalah ExproTravel sebuah tim yang berdedikasi untuk membantu
+              Anda menjelajahi dunia dengan cara yang lebih mudah, nyaman, dan
+              berkesan. Dengan pengalaman bertahun-tahun di industri travel,
+              kami telah membantu ribuan orang menemukan destinasi impian
+              mereka.
+            </p>
+          </div>
+          <div class="p-images-phone2">
+            <p>
+              Kami percaya bahwa setiap perjalanan adalah kesempatan untuk
+              menciptakan kenangan baru, dan itulah mengapa kami memastikan
+              setiap detail direncanakan dengan sempurna. kami memberikan solusi
+              perjalanan yang sesuai dengan keinginan Anda. Komitmen kami adalah
+              memberikan layanan terbaik, mulai dari proses perencanaan hingga
+              Anda kembali dengan senyuman puas.
+            </p>
+            <div class="image1"></div>
+          </div>
+          <p class="p-desc">
             Kami adalah ExproTravel sebuah tim yang berdedikasi untuk membantu
             Anda menjelajahi dunia dengan cara yang lebih mudah, nyaman, dan
             berkesan. Dengan pengalaman bertahun-tahun di industri travel, kami
             telah membantu ribuan orang menemukan destinasi impian mereka.
           </p>
-          <p>
+          <p class="p-desc">
             Kami percaya bahwa setiap perjalanan adalah kesempatan untuk
             menciptakan kenangan baru, dan itulah mengapa kami memastikan setiap
             detail direncanakan dengan sempurna. kami memberikan solusi
@@ -253,75 +278,77 @@
     </section>
 
     <section id="testimonials">
-      <h1>Testimonials</h1>
-      <div class="testimonials-container">
-        <div class="testimonial-card">
-          <div class="profile">
-            <img src="img/terstimonials/stock2.png" alt="asd" />
-          </div>
-          <div class="title">
-            <div class="name">
-              <h4>Audi Marcedez</h4>
-              <p>Single Student</p>
+      <div class="kont">
+        <h1>Testimonials</h1>
+        <div class="testimonials-container">
+          <div class="testimonial-card">
+            <div class="profile">
+              <img src="img/terstimonials/stock2.png" alt="asd" />
             </div>
-            <div class="rating">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
+            <div class="title">
+              <div class="name">
+                <h4>Audi Marcedez</h4>
+                <p>Single Student</p>
+              </div>
+              <div class="rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
             </div>
+            <p class="comments">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+              ipsam, pariatur ex perspiciatis est quasi excepturi.
+            </p>
           </div>
-          <p class="comments">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-            ipsam, pariatur ex perspiciatis est quasi excepturi.
-          </p>
-        </div>
 
-        <div class="testimonial-card">
-          <div class="profile">
-            <img src="img/terstimonials/stock1.jpg" alt="asd" />
-          </div>
-          <div class="title">
-            <div class="name">
-              <h4>Robert</h4>
-              <p>Office Worker</p>
+          <div class="testimonial-card">
+            <div class="profile">
+              <img src="img/terstimonials/stock1.jpg" alt="asd" />
             </div>
-            <div class="rating">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
+            <div class="title">
+              <div class="name">
+                <h4>Robert</h4>
+                <p>Office Worker</p>
+              </div>
+              <div class="rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
             </div>
+            <p class="comments">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+              ipsam, pariatur ex perspiciatis est quasi excepturi.
+            </p>
           </div>
-          <p class="comments">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-            ipsam, pariatur ex perspiciatis est quasi excepturi.
-          </p>
-        </div>
 
-        <div class="testimonial-card">
-          <div class="profile">
-            <img src="img/terstimonials/stock3.jpg" alt="asd" />
-          </div>
-          <div class="title">
-            <div class="name">
-              <h4>Nana</h4>
-              <p>Debater</p>
+          <div class="testimonial-card">
+            <div class="profile">
+              <img src="img/terstimonials/stock3.jpg" alt="asd" />
             </div>
-            <div class="rating">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
+            <div class="title">
+              <div class="name">
+                <h4>Nana</h4>
+                <p>Debater</p>
+              </div>
+              <div class="rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
             </div>
+            <p class="comments">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
+              ipsam, pariatur ex perspiciatis est quasi excepturi.
+            </p>
           </div>
-          <p class="comments">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus
-            ipsam, pariatur ex perspiciatis est quasi excepturi.
-          </p>
         </div>
       </div>
     </section>

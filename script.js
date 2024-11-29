@@ -126,3 +126,19 @@ function toggleTopBookSlider(disabled = false) {
     swiper.el.classList.remove("swiper-no-scroll");
   }
 }
+
+document.addEventListener("click", function (event) {
+  const nav = document.querySelector("#nav");
+  const navUl = document.querySelector("#nav ul");
+  const hamburger = document.querySelector(".hamburger");
+
+  // Check if click is outside nav ul and hamburger
+  if (!navUl.contains(event.target) && !hamburger.contains(event.target)) {
+    nav.classList.remove("active");
+  }
+});
+
+function toggleHamburger() {
+  const nav = document.querySelector("#nav");
+  nav.classList.toggle("active");
+}
