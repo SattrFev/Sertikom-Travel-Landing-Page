@@ -46,32 +46,22 @@
           </div>
         </li>
         <li>
-          <a
-            href="#hero"
-            onclick="event.preventDefault(); document.querySelector('#hero').scrollIntoView({behavior: 'smooth', block: 'center'})"
-            >Home</a
-          >
+          <a href="#hero">Home</a>
         </li>
         <li>
-          <a
-            href="#popular-destinations"
-            onclick="event.preventDefault(); document.querySelector('#popular-destinations').scrollIntoView({behavior: 'smooth', block: 'start'})"
-            >Popular</a
-          >
+          <a href="#aboutus">About</a>
         </li>
         <li>
-          <a
-            href="#aboutus"
-            onclick="event.preventDefault(); document.querySelector('#aboutus').scrollIntoView({behavior: 'smooth', block: 'start'})"
-            >About</a
-          >
+          <a href="#popular-destinations">Popular</a>
         </li>
         <li>
-          <a
-            href="#contact"
-            onclick="event.preventDefault(); document.querySelector('#contact').scrollIntoView({behavior: 'smooth', block: 'center'})"
-            >Contact</a
-          >
+          <a href="#plans">Plans</a>
+        </li>
+        <li>
+          <a href="#testimonials">Testimonials</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
         </li>
       </ul>
       <button class="hamburger" onclick="toggleHamburger()">
@@ -80,47 +70,67 @@
     </nav>
 
     <section id="hero">
-      <div class="cta">
-        <h1 class="greeting">Good Morning!</h1>
-        <p class="cta-text">
-          Explore the world in ease with <span>ExproTravel</span>
-        </p>
-        <div class="cta-book">
-          <input type="text" placeholder="Search..." />
-          <div class="parameters">
-            <div class="location">
-              <i class="fa-regular fa-compass"></i>
-              <div class="desc">
-                <h3>Location</h3>
-                <p>Add destination</p>
-              </div>
-            </div>
+      <div class="container">
+        <div class="desc">
+          <h2>Jelajahi keajaiban dunia bersama <span>ExproTravel</span></h2>
+          <div class="cta">
+            <button><i class="fa-regular fa-map"></i>Destinasi</button>
+            <button>Layanan Kami</button>
+          </div>
+        </div>
+        <div class="form">
+          <h2>Cukup pilih tanggal</h2>
+          <h3>Buat Reservasi Mu</h3>
+          <div class="form-cta">
             <div class="checkin">
-              <i class="fa-regular fa-calendar"></i>
-              <div class="desc">
-                <h3>Check in</h3>
-                <p>Add dates</p>
+              <h1>Check In</h1>
+              <div class="date">
+                <p>12/01/2024</p>
+                <i class="fa-solid fa-chevron-down"></i>
               </div>
             </div>
             <div class="checkout">
-              <i class="fa-regular fa-calendar"></i>
-              <div class="desc">
-                <h3>Check out</h3>
-                <p>Add dates</p>
+              <h1>Check Out</h1>
+              <div class="date">
+                <p>12/07/2024</p>
+                <i class="fa-solid fa-chevron-down"></i>
               </div>
             </div>
-            <div class="guests">
-              <i class="fa-regular fa-user"></i>
-              <div class="desc">
-                <h3>Guests</h3>
-                <p>Add guests</p>
+            <div class="rooms">
+              <h1>Kamar</h1>
+              <div class="amount">
+                <p>3</p>
+                <i class="fa-solid fa-chevron-down"></i>
               </div>
             </div>
+            <div class="persons">
+              <div class="adult">
+                <p>Dewasa</p>
+                <div class="number">
+                  <p>1</p>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+              </div>
+              <div class="child">
+                <p>Anak</p>
+                <div class="number">
+                  <p>0</p>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </div>
+              </div>
+            </div>
+            <button>Cek Ketersediaan</button>
           </div>
-          <button class="search-btn">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
         </div>
+      </div>
+
+      <div class="swiper bg-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide temp-1"></div>
+          <div class="swiper-slide temp-2"></div>
+          <div class="swiper-slide temp-3"></div>
+        </div>
+        <div class="swiper-pagination"></div>
       </div>
     </section>
 
@@ -153,7 +163,6 @@
               memberikan layanan terbaik, mulai dari proses perencanaan hingga
               Anda kembali dengan senyuman puas.
             </p>
-            <div class="image1"></div>
           </div>
           <p class="p-desc">
             Kami adalah ExproTravel sebuah tim yang berdedikasi untuk membantu
@@ -283,12 +292,12 @@
         <div class="testimonials-container">
           <div class="testimonial-card">
             <div class="profile">
-              <img src="img/terstimonials/stock2.png" alt="asd" />
+              <img src="img/terstimonials/stock1.jpg" alt="asd" />
             </div>
             <div class="title">
               <div class="name">
-                <h4>Audi Marcedez</h4>
-                <p>Single Student</p>
+                <h4>Zee</h4>
+                <p>Singer, Dancer, Pretty Girl</p>
               </div>
               <div class="rating">
                 <i class="fa-solid fa-star"></i>
@@ -306,12 +315,12 @@
 
           <div class="testimonial-card">
             <div class="profile">
-              <img src="img/terstimonials/stock1.jpg" alt="asd" />
+              <img src="img/terstimonials/stock2.webp" alt="asd" />
             </div>
             <div class="title">
               <div class="name">
-                <h4>Robert</h4>
-                <p>Office Worker</p>
+                <h4>Oniel</h4>
+                <p>Dancer</p>
               </div>
               <div class="rating">
                 <i class="fa-solid fa-star"></i>
@@ -333,8 +342,8 @@
             </div>
             <div class="title">
               <div class="name">
-                <h4>Nana</h4>
-                <p>Debater</p>
+                <h4>Oline</h4>
+                <p>Singer</p>
               </div>
               <div class="rating">
                 <i class="fa-solid fa-star"></i>
@@ -355,142 +364,7 @@
 
     <section id="plans">
       <h1>Plans</h1>
-      <div class="plans-container">
-        <div class="plans-card-basic">
-          <div class="desc">
-            <div class="div-title">
-              <h2>Basic</h2>
-              <div class="max-pax">
-                <i class="fa-solid fa-user"></i>
-                <p>2+</p>
-              </div>
-            </div>
-            <p class="desc-text">
-              Perfect for solo travelers or couples looking for a
-              budget-friendly option.
-            </p>
-            <div class="price">
-              <h1>$241</h1>
-              <p>/ per day</p>
-            </div>
-            <button class="choose-btn">Choose</button>
-            <div class="bottom-desc">
-              <div class="benefits">
-                <div class="checkk">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Luggage</p>
-                </div>
-                <div class="checkk">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Wifi</p>
-                </div>
-                <div class="checkk">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Breakfast</p>
-                </div>
-                <div class="checkk">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Free Cancellation</p>
-                </div>
-              </div>
-              <button class="learn-more">
-                Learn More <i class="fa-solid fa-arrow-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="plans-card-pro">
-          <div class="desc">
-            <div class="div-title">
-              <h2>Pro</h2>
-              <div class="max-pax">
-                <i class="fa-solid fa-user"></i>
-                <p>5+</p>
-              </div>
-            </div>
-            <p class="desc-text">
-              for family or friends looking for a comfortable and luxurious
-              experience.
-            </p>
-            <div class="price">
-              <h1>$499</h1>
-              <p>/ per day</p>
-            </div>
-            <button class="choose-btn">Choose</button>
-            <div class="bottom-desc">
-              <div class="benefits">
-                <div class="checkk">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Luggage</p>
-                </div>
-                <div class="checkk">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Wifi</p>
-                </div>
-                <div class="checkk">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Breakfast</p>
-                </div>
-                <div class="checkk">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Champagne</p>
-                </div>
-                <div class="checkk">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Night View</p>
-                </div>
-                <div class="checkk">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Dinner</p>
-                </div>
-                <div class="checkk">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Room Service</p>
-                </div>
-              </div>
-              <button class="learn-more">
-                Learn More <i class="fa-solid fa-arrow-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="plans-card-enterprise">
-          <div class="desc">
-            <div class="div-title">
-              <h2>Enterprise</h2>
-              <div class="max-pax">
-                <i class="fa-solid fa-user"></i>
-                <p>11+</p>
-              </div>
-            </div>
-            <p class="desc-text">
-              Perfect for large groups or corporate events looking for a travel
-              solution.
-            </p>
-            <div class="price">
-              <h1>$1,241</h1>
-              <p>/ per day</p>
-            </div>
-            <button class="choose-btn">Choose</button>
-            <div class="bottom-desc">
-              <div class="benefits">
-                <div class="checkk">
-                  <i class="fa-solid fa-check"></i>
-                  <p>All Inclusive</p>
-                </div>
-              </div>
-              <div class="important">
-                <button class="learn-more">
-                  Learn More <i class="fa-solid fa-arrow-right"></i>
-                </button>
-                <p>
-                  Please <a href="#contact">contact</a> us for more information
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="plans-container"></div>
     </section>
 
     <section id="banner">

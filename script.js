@@ -26,10 +26,27 @@ const partnersSwiper = new Swiper(".partners-container", {
   speed: 4000,
 });
 
+const heroBgSwiper = new Swiper(".bg-container", {
+  slidesPerView: 1,
+  pagination: {
+    el: ".swiper-pagination",
+  },
+});
+
+const topBookSwiper = new Swiper(".top-book-container", {
+  direction: "horizontal",
+  slidesPerView: "auto",
+  spaceBetween: 20,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
+
 // Add scroll handler for navbar darkening
 window.addEventListener("scroll", () => {
   const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-  if (window.scrollY >= heroBottom - 80 - nav.offsetHeight) {
+  if (window.scrollY >= heroBottom - 30 - nav.offsetHeight) {
     nav.classList.add("scrolled");
     // Add dark mode to nav items
     document.querySelectorAll("#nav a, #nav button").forEach((item) => {
@@ -89,31 +106,6 @@ async function updateGreeting() {
 greetingElement.textContent = greetings[0].text;
 setInterval(updateGreeting, 7000);
 
-const newsSwiper = new Swiper(".news-swiper", {
-  direction: "horizontal",
-  slidesPerView: "auto",
-  spaceBetween: 82,
-  loop: false,
-  navigation: {
-    nextEl: ".next",
-    prevEl: ".prev",
-  },
-  pagination: {
-    el: ".swiper-pagination",
-  },
-});
-
-var topBookSwiper = new Swiper(".top-book-container", {
-  direction: "horizontal",
-  slidesPerView: "auto",
-  spaceBetween: 20,
-  loop: false,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-});
-
 function toggleTopBookSlider(disabled = false) {
   const swiperContainer = document.querySelector(".top-book-container");
   const swiper = swiperContainer.swiper;
@@ -132,9 +124,12 @@ document.addEventListener("click", function (event) {
   const navUl = document.querySelector("#nav ul");
   const hamburger = document.querySelector(".hamburger");
 
-  // Check if click is outside nav ul and hamburger
-  if (!navUl.contains(event.target) && !hamburger.contains(event.target)) {
-    nav.classList.remove("active");
+  // Check if nav is active first, no need to check contains if menu isn't open
+  if (nav.classList.contains("active")) {
+    // Check if click is outside nav ul and hamburger
+    if (!navUl.contains(event.target) && !hamburger.contains(event.target)) {
+      nav.classList.remove("active");
+    }
   }
 });
 
