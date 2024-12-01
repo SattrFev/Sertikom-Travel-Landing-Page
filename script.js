@@ -8,7 +8,7 @@ const greetings = [
 
 let currentIndex = 0;
 const greetingElement = document.querySelector(".greeting");
-const brandSpan = document.querySelector(".cta-text span");
+const brandSpan = document.querySelector("#hero .container .desc h2 span");
 const nav = document.querySelector("#nav");
 const heroSection = document.querySelector("#hero");
 const partnersContainer = document.querySelector(".partners-container");
@@ -71,7 +71,6 @@ document.addEventListener("mousemove", (e) => {
   const angle =
     Math.atan2(mouseY - centerY, mouseX - centerX) * (180 / Math.PI);
   const adjustedAngle = (angle + 360) % 360;
-
   brandSpan.style.background = `linear-gradient(${adjustedAngle}deg, var(--secondary-color), #62b3c8)`;
   brandSpan.style.webkitBackgroundClip = "text";
   brandSpan.style.backgroundClip = "text";

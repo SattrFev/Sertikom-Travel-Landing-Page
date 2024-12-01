@@ -1040,7 +1040,11 @@ nav li .search-box input::placeholder {
 /* ============== Plans ============== */
 
 #plans {
-  padding: 5rem 3rem;
+  padding: 2rem 3rem;
+  width: 100%;
+  margin-top: 5rem;
+  height: 100vh;
+  background-color: #0000001f;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1053,28 +1057,141 @@ nav li .search-box input::placeholder {
   color: var(--text-color);
 }
 
-#plans .plans-container {
+#plans .container {
   display: flex;
   justify-content: space-evenly;
   width: 75vw;
-  height: 55rem;
+  background-color: #0000001f;
+  height: 100%;
   align-items: center;
 }
 
-#plans
-  .plans-container
-  .plans-card-enterprise
-  .desc
-  .bottom-desc
-  .important
-  a:hover {
-  color: var(--secondary-color);
+#plans .container .card-container {
+  width: 100%;
+  height: 100%;
+  background-color: #0000001f;
 }
 
-#plans .plans-container .plans-card-enterprise .desc .bottom-desc .important p {
-  font-size: 0.7rem;
-  font-weight: 300;
+#plans .container .card-container .budget .bg {
+  display: flex;
+  width: 11rem;
+  gap: 0.5rem;
+  position: absolute;
+  top: 0;
+  right: -8px;
+  flex-wrap: wrap;
 }
+
+#plans .container .card-container .budget .bg i {
+  font-size: 5rem;
+  color: #948b5c;
+}
+
+#plans .container .card-container .budget .bg i:nth-child(2),
+#plans .container .card-container .budget .bg i:nth-child(3),
+#plans .container .card-container .budget .bg i:nth-child(4) {
+  color: #c07440;
+}
+
+#plans .container .card-container .budget {
+  position: relative;
+  width: 32rem;
+  padding: 4rem;
+  border-radius: 1rem;
+  border: 1px solid #0000001f;
+  height: 100%;
+  background-color: #0000001f;
+}
+
+#plans .container .card-container .budget .fill {
+  background-color: #0000001f;
+  height: 100%;
+  z-index: 10;
+  position: relative;
+}
+
+#plans .container .card-container .budget .fill .title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+#plans .container .card-container .budget .fill .price {
+  padding: 1rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  position: relative;
+}
+
+#plans .container .card-container .budget .fill .price::after {
+  content: " ";
+  width: 5rem;
+  height: 3px;
+  background-color: #5ca6e2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#plans .container .card-container .budget .fill .price p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+#plans .container .card-container .budget .fill .price h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+#plans .container .card-container .budget .fill .desc {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 1rem;
+  color: #000000da;
+}
+
+#plans .container .card-container .budget .fill .cta {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+#plans .container .card-container .budget .fill .cta button {
+  padding: 0.8rem 2rem;
+  border-radius: 0.3rem;
+  border: none;
+  background-color: #242424;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#plans .container .card-container .budget .fill .cta button:hover {
+  transform: translateY(-2%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#plans .container .card-container .budget .fill .cta button:nth-child(2) {
+  color: #242424;
+  border: 2px solid #242424;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+#plans .container .card-container .budget .fill .cta button:nth-child(2):hover {
+  border: 2px solid #242424a8;
+  color: #242424a8;
+  transform: translateY(0%);
+  box-shadow: none;
+}
+
+#plans .container .card-container .budget .fill .benefits {
+  margin-top: 1rem;
+}
+
 /* ============== Testimonials ============== */
 
 #testimonials {
