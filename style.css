@@ -354,13 +354,26 @@ nav li .search-box input::placeholder {
   font-weight: 300;
 }
 
-#hero .container .form .form-cta .checkin .date,
-#hero .container .form .form-cta .checkout .date,
-#hero .container .form .form-cta .rooms .amount {
+#hero .container .form .form-cta .checkin .date input,
+#hero .container .form .form-cta .checkout .date input,
+#hero .container .form .form-cta .rooms .amount input,
+#hero .container .form .form-cta .persons .adult input,
+#hero .container .form .form-cta .persons .child input {
   display: flex;
   align-items: center;
   gap: 0.7rem;
-  color: #ffffffdc;
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  width: 7rem;
+  text-align: end;
+  font-size: 1rem;
+  outline: none;
+}
+#hero .container .form .form-cta .rooms .amount input,
+#hero .container .form .form-cta .persons .adult input,
+#hero .container .form .form-cta .persons .child input {
+  width: 1rem;
 }
 
 #hero .container .form .form-cta .checkin .date p,
@@ -771,7 +784,7 @@ nav li .search-box input::placeholder {
 
 #top-book .top-book-container {
   margin: 0 auto;
-  width: 75%;
+  width: 86%;
 }
 
 #top-book .top-book-container .swiper-pagination-bullet {
@@ -785,8 +798,9 @@ nav li .search-box input::placeholder {
 }
 
 #top-book .top-book-container .card {
-  width: 20rem;
+  width: 17rem;
   height: 24.2rem;
+  margin-right: -2rem;
   cursor: pointer;
   padding: 1rem;
   border-radius: 1rem;
@@ -1053,8 +1067,7 @@ nav li .search-box input::placeholder {
   padding: 2rem 3rem;
   width: 100%;
   margin-top: 5rem;
-  height: 110vh;
-  background-color: #0000001f;
+  min-height: 60vh;
   display: flex;
   gap: 2rem;
   flex-direction: column;
@@ -1070,8 +1083,8 @@ nav li .search-box input::placeholder {
 
 #plans .container {
   display: flex;
-  justify-content: space-evenly;
-  width: 85vw;
+  flex-direction: column;
+  width: 86vw;
   position: relative;
   height: 100%;
   align-items: center;
@@ -1079,182 +1092,11 @@ nav li .search-box input::placeholder {
 
 #plans .container .card-container {
   width: 100%;
-  height: 100%;
   display: flex;
-  visibility: hidden;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   z-index: 1;
-}
-
-#plans .container .destination-container {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 2;
-  background-color: #0000001f;
-}
-
-#plans .container .destination-container .card-selector {
-  background-color: #0000000e;
-  width: 25%;
-  height: 100%;
-}
-
-#plans .container .destination-container .card-selector #card {
-  width: 100%;
-  overflow: hidden;
-  /* padding: 1rem; */
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  position: relative;
-  height: 9rem;
-}
-
-#plans .container .destination-container .card-selector .budget {
-  background: linear-gradient(190deg, #e2e2e2, #b6b6b6);
-}
-#plans .container .destination-container .card-selector .standard {
-  background: linear-gradient(190deg, #d9d9d9, #f1e9de);
-}
-#plans .container .destination-container .card-selector .premium {
-  background: linear-gradient(190deg, #c9e7fc, #90c8e9);
-}
-
-#plans .container .destination-container .card-selector #card .bg {
-  width: 10.4rem;
-  height: fit-content;
-  display: flex;
-  gap: 0.2rem;
-  flex-wrap: wrap;
-  position: absolute;
-  top: -25px;
-  left: -20px;
-  z-index: 1;
-}
-
-#plans .container .destination-container .card-selector #card .bg i {
-  font-size: 5rem;
-}
-
-#plans
-  .container
-  .destination-container
-  .card-selector
-  .budget
-  .bg
-  i:nth-child(2) {
-  color: #7b7b7b;
-}
-
-#plans
-  .container
-  .destination-container
-  .card-selector
-  .budget
-  .bg
-  i:nth-child(1),
-#plans
-  .container
-  .destination-container
-  .card-selector
-  .budget
-  .bg
-  i:nth-child(3),
-#plans
-  .container
-  .destination-container
-  .card-selector
-  .budget
-  .bg
-  i:nth-child(4) {
-  color: #d4d4d4;
-}
-
-#plans .container .destination-container .card-selector #card .desc {
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 0 0 1rem;
-  background-color: #0000000e;
-}
-
-#plans .container .destination-container .card-selector #card .desc button {
-  position: absolute;
-  z-index: 3;
-  right: 0px;
-  top: 0px;
-  border: none;
-  width: 15%;
-  height: 100%;
-  cursor: pointer;
-  background-color: #080808;
-  transition: all 0.2s ease;
-}
-
-#plans .container .destination-container .card-selector #card .desc button i {
-  color: #ffffff;
-  font-size: 2rem;
-  margin: 0;
-}
-
-#plans
-  .container
-  .destination-container
-  .card-selector
-  #card
-  .desc
-  button:hover {
-  box-shadow: -5px 0px 65px -1px rgba(0, 0, 0, 0.75);
-}
-
-#plans
-  .container
-  .destination-container
-  .card-selector
-  #card
-  .desc
-  button:hover
-  i {
-  transform: translateX(5%);
-}
-
-#plans .container .destination-container .card-selector #card .desc h1 {
-  font-size: 2rem;
-  font-weight: 600;
-  width: 80%;
-  height: 4rem;
-  display: flex;
-  align-items: center;
-  position: relative;
-  text-transform: none;
-}
-
-#plans .container .destination-container .card-selector #card .desc h1::after {
-  content: " ";
-  bottom: 0px;
-  left: 0px;
-  position: absolute;
-  width: 4rem;
-  height: 3px;
-  background-color: #000000;
-  transition: width 0.3s ease;
-}
-
-#plans
-  .container
-  .destination-container
-  .card-selector
-  #card:hover
-  .desc
-  h1::after {
-  width: 5rem;
 }
 
 #plans .container .card-container #card {
@@ -1264,7 +1106,7 @@ nav li .search-box input::placeholder {
   padding: 4rem;
   border-radius: 1rem;
   border: 1px solid #0000001f;
-  height: 53rem;
+  height: 26rem;
 }
 
 #plans .container .card-container .premium .bg,
@@ -1319,7 +1161,6 @@ nav li .search-box input::placeholder {
 #plans .container .card-container .premium .bg i {
   color: #3892c6;
 }
-
 #plans .container .card-container .premium .bg i:nth-child(2),
 #plans .container .card-container .premium .bg i:nth-child(3),
 #plans .container .card-container .premium .bg i:nth-child(4) {
@@ -1464,6 +1305,135 @@ nav li .search-box input::placeholder {
   border-radius: 2rem;
 }
 
+#plans .container .places-cont {
+  height: 25.5rem;
+  width: 100%;
+}
+
+#plans .container .places-cont #places {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#plans .container {
+  gap: 3rem;
+}
+
+#plans .container .places-cont #places .card {
+  width: 17rem;
+  height: 24.2rem;
+  margin-right: -2rem;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 1rem;
+  transition: all 0.1s ease-in;
+}
+
+#plans .container .places-cont #places .card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1%);
+}
+
+#plans .container .places-cont #places .card .cover {
+  width: 100%;
+  height: 18rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#plans .container .places-cont #places .card .cover .rating {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #00000067;
+  width: fit-content;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+
+#plans .container .places-cont #places .card .cover .place-desc {
+  position: absolute;
+  font-size: 0.8rem;
+  font-weight: 400;
+  bottom: -6rem;
+  color: #ffffffee;
+  width: 100%;
+  height: 30%;
+  background-color: rgba(0, 0, 0, 0.377);
+  padding: 1rem;
+  transition: bottom 0.2s ease-in-out;
+}
+
+#plans .container .places-cont #places .card:hover .cover .place-desc {
+  bottom: 0px;
+}
+
+#plans .container .places-cont #places .card .cover .rating i {
+  color: #ffda18;
+}
+
+#plans .container .places-cont #places .card .cover .rating p {
+  font-weight: 400;
+  color: #ffffffee;
+}
+
+#plans .container .places-cont #places .card .desc .price {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+#plans .container .places-cont #places .card .desc {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+#plans .container .places-cont #places .card .desc .title h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+#plans .container .places-cont #places .card .desc .title .loc {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+#plans .container .places-cont #places .card .desc .title .loc i {
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.397);
+}
+
+#plans .container .places-cont #places .card .desc .title .loc p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+#plans .container .places-cont #places .card .desc .price-container p {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #00000088;
+}
+
+#plans .container .places-cont {
+  display: none;
+}
+
+#plans .container .places-cont.active {
+  display: block;
+}
+
+#plans .container #pld #places {
+  display: none;
+}
+
 /* ============== Testimonials ============== */
 
 #testimonials {
@@ -1566,7 +1536,7 @@ nav li .search-box input::placeholder {
 #contact .contact-container {
   display: flex;
   transition: width 0.2s ease-in-out;
-  width: 75vw;
+  width: 70vw;
   height: 23rem;
   overflow: hidden;
   border-radius: 1.5rem;
@@ -1574,7 +1544,7 @@ nav li .search-box input::placeholder {
 }
 
 #contact .contact-container .cover {
-  width: 40%;
+  width: 50%;
   height: 100%;
   background-color: #0000000e;
   background-image: url(img/top-book/stock4.jpg);
@@ -1584,14 +1554,14 @@ nav li .search-box input::placeholder {
 
 #contact .contact-container .form-container {
   padding: 2rem;
-  width: 60%;
+  width: 50%;
   display: flex;
   justify-content: space-between;
 }
 
 #contact .contact-container .form-container form {
   display: flex;
-  width: 67%;
+  width: 100%;
   flex-direction: column;
   gap: 1rem;
 }
@@ -1631,25 +1601,43 @@ nav li .search-box input::placeholder {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#contact .contact-container .form-container .contact-information {
+#contact .contact-information {
+  width: 100%;
+  padding: 0 12.5rem;
+  gap: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  flex-wrap: wrap;
+}
+#contact .contact-information .email,
+#contact .contact-information .based {
+  width: 100%;
+  display: flex;
+  padding: 1rem;
+  border-radius: 1rem;
+  align-items: center;
 }
 
-#contact .contact-container .form-container .contact-information .email h1,
-#contact .contact-container .form-container .contact-information .based h1 {
-  font-size: 1.3rem;
-  font-weight: 400;
-  margin-bottom: 0.5rem;
+#contact .contact-information .email {
+  background-color: #81caca7a;
+}
+#contact .contact-information .based {
+  background-color: #e5ddcf86;
 }
 
-#contact .contact-container .form-container .contact-information .email p,
-#contact .contact-container .form-container .contact-information .based p {
-  font-size: 0.9rem;
-  font-weight: 300;
+#contact .contact-information .email h1,
+#contact .contact-information .based h1 {
+  font-size: 2rem;
+  width: 12rem;
+  border-right: 3px solid #00000067;
 }
 
+#contact .contact-information .email p,
+#contact .contact-information .based p {
+  margin-left: 2rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
 /* ============== Footer ============== */
 
 #footer {
@@ -1773,6 +1761,104 @@ nav li .search-box input::placeholder {
     font-size: 13px;
   }
 
+  #contact .contact-information {
+    width: 100%;
+    padding: 0;
+    height: fit-content;
+  }
+
+  #contact .contact-information .email,
+  #contact .contact-information .based {
+    flex-direction: column;
+  }
+
+  #contact .contact-information .email h1,
+  #contact .contact-information .based h1 {
+    width: fit-content;
+    border: none;
+  }
+
+  #contact .contact-information .email p,
+  #contact .contact-information .based p {
+    margin: 0;
+  }
+
+  #plans {
+    align-items: center;
+    width: 100%;
+  }
+  #plans .container .destination-container {
+    background-color: #df1f1f0e;
+    border-radius: 0;
+    flex-direction: column;
+  }
+
+  #plans .container .destination-container .card-selector {
+    width: 100%;
+    height: 33%;
+    gap: 0.9rem;
+  }
+
+  #plans .container .destination-container .card-selector #card {
+    height: 16rem;
+  }
+  #plans .container .destination-container .card-selector #card .desc {
+    flex-direction: column;
+    padding: 0;
+    display: flex;
+  }
+
+  #plans .container .destination-container .card-selector #card .desc button {
+    top: auto;
+    bottom: 0px;
+    height: 30%;
+    width: 100%;
+  }
+
+  #plans
+    .container
+    .destination-container
+    .card-selector
+    #card
+    .desc
+    button:hover
+    i {
+    transform: none;
+  }
+
+  #plans .container .destination-container .card-selector #card .desc h1 {
+    font-size: 3.4rem;
+    height: fit-content;
+    text-align: center;
+    margin-top: 3rem;
+    width: fit-content;
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  #plans
+    .container
+    .destination-container
+    .card-selector
+    #card
+    .desc
+    button
+    #right {
+    display: none;
+  }
+
+  #plans
+    .container
+    .destination-container
+    .card-selector
+    #card
+    .desc
+    button
+    #down {
+    display: block;
+  }
+
   #plans .container .card-container {
     justify-content: start;
   }
@@ -1884,7 +1970,14 @@ nav li .search-box input::placeholder {
     display: none;
   }
 
-  #top-book .top-book-container .card .cover .place-desc {
+  #plans
+    .container
+    .destination-container
+    .des-selector
+    .des-container
+    .card
+    .cover
+    .place-desc {
     bottom: 1px;
     font-size: 0.8rem;
   }

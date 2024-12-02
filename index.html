@@ -35,7 +35,6 @@
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
     ></script>
     <script src="src/app.js"></script>
-    <script src="script.js" defer></script>
 
     <!-- FlatPickr -->
     <link
@@ -45,9 +44,9 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   </head>
   <body x-data>
-    <nav id="nav">
+    <nav id="nav" class="navbarx">
       <a class="logo" href="#">ExproTravel</a>
-      <ul>
+      <ul class="hamburgex">
         <li>
           <div class="search-box">
             <input type="text" placeholder="Search..." />
@@ -87,6 +86,7 @@
             <button>Layanan Kami</button>
           </div>
         </div>
+
         <div class="form">
           <h2>Cukup pilih tanggal</h2>
           <h3>Buat Reservasi Mu</h3>
@@ -94,37 +94,32 @@
             <div class="checkin">
               <h1>Check In</h1>
               <div class="date">
-                <p>12/01/2024</p>
-                <i class="fa-solid fa-chevron-down" @click="openCalendar"></i>
+                <input id="checkinPick" type="text" placeholder="12/01/2024" />
               </div>
             </div>
             <div class="checkout">
               <h1>Check Out</h1>
               <div class="date">
-                <p>12/07/2024</p>
-                <i class="fa-solid fa-chevron-down"></i>
+                <input id="checkoutPick" type="text" placeholder="12/07/2024" />
               </div>
             </div>
             <div class="rooms">
               <h1>Kamar</h1>
               <div class="amount">
-                <p>3</p>
-                <i class="fa-solid fa-chevron-down"></i>
+                <input id="roomAmount" type="text" placeholder="0" />
               </div>
             </div>
             <div class="persons">
               <div class="adult">
                 <p>Dewasa</p>
                 <div class="number">
-                  <p>1</p>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <input id="adultAmount" type="text" placeholder="0" />
                 </div>
               </div>
               <div class="child">
                 <p>Anak</p>
                 <div class="number">
-                  <p>0</p>
-                  <i class="fa-solid fa-chevron-down"></i>
+                  <input id="childAmount" type="text" placeholder="0" />
                 </div>
               </div>
             </div>
@@ -371,7 +366,7 @@
       </div>
     </section>
 
-    <section id="plans">
+    <section id="plans" x-data="bookPlaces">
       <h1>Paket</h1>
       <div class="container">
         <div class="card-container">
@@ -396,22 +391,7 @@
                 </p>
               </div>
               <div class="cta">
-                <button>Destinasi</button>
-                <button>Pelajari</button>
-              </div>
-              <div class="benefits">
-                <div class="check">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Penginapan</p>
-                </div>
-                <div class="check">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Transportasi</p>
-                </div>
-                <div class="check">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Maks 2 Dewasa, 1 Anak</p>
-                </div>
+                <button @click="tugelpaket(1)">Destinasi</button>
               </div>
             </div>
           </div>
@@ -436,30 +416,7 @@
                 </p>
               </div>
               <div class="cta">
-                <button>Destinasi</button>
-                <button>Pelajari</button>
-              </div>
-              <div class="benefits">
-                <div class="check">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Penginapan</p>
-                </div>
-                <div class="check">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Transportasi</p>
-                </div>
-                <div class="check">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Layanan 24 Jam</p>
-                </div>
-                <div class="check">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Tour Guide</p>
-                </div>
-                <div class="check">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Maks 4 Orang</p>
-                </div>
+                <button @click="tugelpaket(2)">Destinasi</button>
               </div>
             </div>
           </div>
@@ -484,82 +441,134 @@
                 </p>
               </div>
               <div class="cta">
-                <button>Destinasi</button>
-                <button>Pelajari</button>
-              </div>
-              <div class="benefits">
-                <div class="check">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Penginapan</p>
-                </div>
-                <div class="check">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Transportasi</p>
-                </div>
-                <div class="check">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Layanan 24 Jam</p>
-                </div>
-                <div class="check">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Tour Guide</p>
-                </div>
-                <div class="check">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Manajemen Waktu</p>
-                </div>
-                <div class="check">
-                  <i class="fa-solid fa-check"></i>
-                  <p>Maks 6 Orang</p>
-                </div>
+                <button @click="tugelpaket(3)">Destinasi</button>
               </div>
             </div>
           </div>
         </div>
-        <div class="destination-container">
-          <div class="card-selector">
-            <div class="budget" id="card">
-              <div class="bg">
-                <i class="fa-solid fa-circle"></i>
-                <i class="fa-solid fa-circle"></i>
-                <i class="fa-solid fa-circle"></i
-                ><i class="fa-solid fa-circle"></i>
+        <div class="places-cont" id="pld">
+          <div class="budget-places" id="places">
+            <template
+              x-for="(item, index) in items.sort(() => Math.random() - 0.5).slice(0, 6)"
+              x-key="index"
+            >
+              <div class="card">
+                <div
+                  :style="{
+                backgroundImage: `url(img/top-book/${item.img})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }"
+                  class="cover"
+                >
+                  <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <p x-text="item.rating"></p>
+                  </div>
+                  <div class="place-desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Eius eaque rerum sed?
+                  </div>
+                </div>
+                <div class="desc">
+                  <div class="title">
+                    <h2 x-text="item.name"></h2>
+                    <div class="loc">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <p x-text="item.loc"></p>
+                    </div>
+                  </div>
+                  <div class="price-container">
+                    <h2 class="price" x-text="formatNumber(item.price)"></h2>
+                    <p>/ person</p>
+                  </div>
+                </div>
               </div>
-              <div class="desc">
-                <h1>Paket Budget</h1>
-                <button><i class="fa-solid fa-chevron-right"></i></button>
+            </template>
+          </div>
+          <div class="standard-places" id="places">
+            <template
+              x-for="(item, index) in items.sort(() => Math.random() - 0.5).slice(0, 6)"
+              x-key="index"
+            >
+              <div class="card">
+                <div
+                  :style="{
+                backgroundImage: `url(img/top-book/${item.img})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }"
+                  class="cover"
+                >
+                  <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <p x-text="item.rating"></p>
+                  </div>
+                  <div class="place-desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Eius eaque rerum sed?
+                  </div>
+                </div>
+                <div class="desc">
+                  <div class="title">
+                    <h2 x-text="item.name"></h2>
+                    <div class="loc">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <p x-text="item.loc"></p>
+                    </div>
+                  </div>
+                  <div class="price-container">
+                    <h2 class="price" x-text="formatNumber(item.price)"></h2>
+                    <p>/ person</p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="standard" id="card">
-              <div class="bg">
-                <i class="fa-solid fa-circle"></i>
-                <i class="fa-solid fa-circle"></i>
-                <i class="fa-solid fa-circle"></i
-                ><i class="fa-solid fa-circle"></i>
+            </template>
+          </div>
+          <div class="premium-places" id="places">
+            <template
+              x-for="(item, index) in items.sort(() => Math.random() - 0.5).slice(0, 6)"
+              x-key="index"
+            >
+              <div class="card">
+                <div
+                  :style="{
+                backgroundImage: `url(img/top-book/${item.img})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }"
+                  class="cover"
+                >
+                  <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <p x-text="item.rating"></p>
+                  </div>
+                  <div class="place-desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Eius eaque rerum sed?
+                  </div>
+                </div>
+                <div class="desc">
+                  <div class="title">
+                    <h2 x-text="item.name"></h2>
+                    <div class="loc">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <p x-text="item.loc"></p>
+                    </div>
+                  </div>
+                  <div class="price-container">
+                    <h2 class="price" x-text="formatNumber(item.price)"></h2>
+                    <p>/ person</p>
+                  </div>
+                </div>
               </div>
-              <div class="desc">
-                <h1>Paket Standard</h1>
-                <button><i class="fa-solid fa-chevron-right"></i></button>
-              </div>
-            </div>
-            <div class="premium" id="card">
-              <div class="bg">
-                <i class="fa-solid fa-circle"></i>
-                <i class="fa-solid fa-circle"></i>
-                <i class="fa-solid fa-circle"></i
-                ><i class="fa-solid fa-circle"></i>
-              </div>
-              <div class="desc">
-                <h1>Paket Premium</h1>
-                <button><i class="fa-solid fa-chevron-right"></i></button>
-              </div>
-            </div>
+            </template>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="banner">
+    <!-- <section id="banner">
       <div class="banner-container">
         <h1>Explore Maldives</h1>
         <div class="desc">
@@ -595,7 +604,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section id="contact">
       <h1>Contact Us</h1>
@@ -608,20 +617,17 @@
             <textarea placeholder="Message" rows="5"></textarea>
             <button>Send</button>
           </form>
-          <div class="contact-information">
-            <div class="email">
-              <h1>Contact</h1>
-              <p>hi@exprotravel.com</p>
-              <p>support@exprotravel.com</p>
-              <p>bookings@exprotravel.com</p>
-            </div>
-            <div class="based">
-              <h1>Based in</h1>
-              <p>123 Sunset Boulevard</p>
-              <p>Los Angeles, CA 90028</p>
-              <p>United States</p>
-            </div>
-          </div>
+        </div>
+      </div>
+      <div class="contact-information">
+        <div class="email">
+          <h1>Contact</h1>
+          <p>+6282566559855</p>
+          <p>hi@exprotravel.com</p>
+        </div>
+        <div class="based">
+          <h1>Based in</h1>
+          <p>123 Sunset Boulevard, Los Angeles, CA 90028, United States</p>
         </div>
       </div>
     </section>
@@ -740,5 +746,6 @@
         </div>
       </div>
     </section>
+    <script src="script.js" defer></script>
   </body>
 </html>

@@ -12,6 +12,7 @@ const brandSpan = document.querySelector("#hero .container .desc h2 span");
 const nav = document.querySelector("#nav");
 const heroSection = document.querySelector("#hero");
 const partnersContainer = document.querySelector(".partners-container");
+const navxx = document.querySelector(".navbarx");
 
 const partnersSwiper = new Swiper(".partners-container", {
   slidesPerView: "auto",
@@ -41,7 +42,6 @@ const heroBgSwiper = new Swiper(".bg-container", {
 const topBookSwiper = new Swiper(".top-book-container", {
   direction: "horizontal",
   slidesPerView: "auto",
-  spaceBetween: 20,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -77,6 +77,21 @@ document.addEventListener("mousemove", (e) => {
   brandSpan.style.backgroundClip = "text";
   brandSpan.style.color = "transparent";
 });
+
+document.addEventListener("click", (e) => {
+  if (!document.querySelector(".hamburger").contains(e.target)) {
+    if (navxx.classList.contains("active")) {
+      const hamb = document.querySelector(".hamburgex");
+      if (!hamb.contains(e.target)) {
+        navxx.classList.remove("active");
+      }
+    }
+  }
+});
+
+function Hellw() {
+  alert("Helo World");
+}
 
 async function morphText(element, oldText, newText) {
   const maxLength = Math.max(oldText.length, newText.length);
@@ -118,43 +133,47 @@ function toggleTopBookSlider(disabled = false) {
   }
 }
 
-document.addEventListener("click", function (event) {
-  const nav = document.querySelector("#nav");
-  const navUl = document.querySelector("#nav ul");
-  const hamburger = document.querySelector(".hamburger");
+document.addEventListener("DOMContentLoaded", function () {
+  flatpickr("#checkinPick", {
+    dateFormat: "m/d/Y",
+    minDate: "today",
+  });
 
-  if (nav.classList.contains("active")) {
-    if (!navUl.contains(event.target) && !hamburger.contains(event.target)) {
-      nav.classList.remove("active");
-    }
-  }
+  flatpickr("#checkoutPick", {
+    dateFormat: "m/d/Y",
+    minDate: "today",
+  });
+});
+
+document.addEventListener("click", (e) => {
+  console.log(e.target);
 });
 
 function toggleHamburger() {
-  const nav = document.querySelector("#nav");
-  nav.classList.toggle("active");
+  navxx.classList.toggle("active");
 }
 
-function datepicker() {
-  return {
-    selectedDate: "12/01/2024", // Default date shown in the <p> tag
-    flatpickrInstance: null, // Initialize flatpickr instance
-    init() {
-      // Initialize Flatpickr instance
-      const dateInput = document.querySelector("#datepicker");
-      this.flatpickrInstance = flatpickr(dateInput, {
-        dateFormat: "m/d/Y", // Set desired date format
-        defaultDate: this.selectedDate, // Set default date from Alpine data
-        onChange: (selectedDates) => {
-          // Update the Alpine data with the selected date
-          this.selectedDate = flatpickr.formatDate(selectedDates[0], "m/d/Y");
-        },
-      });
-    },
-    openCalendar() {
-      // Open the Flatpickr calendar when the chevron icon is clicked
-      alert(123);
-      this.flatpickrInstance.open();
-    },
-  };
+function tugelpaket(id) {
+  console.log(id);
+  const paketco = document.querySelector(".places-cont");
+  const bdgt = document.querySelector(".budget-places");
+  const std = document.querySelector(".standard-places");
+  const prm = document.querySelector(".premium-places");
+  if (!paketco.classList.contains("active")) {
+    paketco.classList.add("active");
+  }
+
+  if (id === 1) {
+    bdgt.style.display = "flex";
+    std.style.display = "none";
+    prm.style.display = "none";
+  } else if (id === 2) {
+    bdgt.style.display = "none";
+    std.style.display = "flex";
+    prm.style.display = "none";
+  } else if (id === 3) {
+    bdgt.style.display = "none";
+    std.style.display = "none";
+    prm.style.display = "flex";
+  }
 }
