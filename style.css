@@ -1761,6 +1761,28 @@ nav li .search-box input::placeholder {
     font-size: 13px;
   }
 
+  #plans .container {
+    height: fit-content;
+  }
+  #plans .container .card-container {
+    gap: 1rem;
+  }
+
+  #plans .container .places-cont {
+    height: 100vw;
+  }
+
+  #plans .container .places-cont #places {
+    justify-content: start;
+    width: 100%;
+    gap: 1rem;
+    overflow-y: scroll;
+  }
+
+  #contact {
+    margin-top: -100vh;
+  }
+
   #contact .contact-information {
     width: 100%;
     padding: 0;
@@ -1786,77 +1808,6 @@ nav li .search-box input::placeholder {
   #plans {
     align-items: center;
     width: 100%;
-  }
-  #plans .container .destination-container {
-    background-color: #df1f1f0e;
-    border-radius: 0;
-    flex-direction: column;
-  }
-
-  #plans .container .destination-container .card-selector {
-    width: 100%;
-    height: 33%;
-    gap: 0.9rem;
-  }
-
-  #plans .container .destination-container .card-selector #card {
-    height: 16rem;
-  }
-  #plans .container .destination-container .card-selector #card .desc {
-    flex-direction: column;
-    padding: 0;
-    display: flex;
-  }
-
-  #plans .container .destination-container .card-selector #card .desc button {
-    top: auto;
-    bottom: 0px;
-    height: 30%;
-    width: 100%;
-  }
-
-  #plans
-    .container
-    .destination-container
-    .card-selector
-    #card
-    .desc
-    button:hover
-    i {
-    transform: none;
-  }
-
-  #plans .container .destination-container .card-selector #card .desc h1 {
-    font-size: 3.4rem;
-    height: fit-content;
-    text-align: center;
-    margin-top: 3rem;
-    width: fit-content;
-    margin-left: 1rem;
-    display: flex;
-    align-items: center;
-  }
-
-  #plans
-    .container
-    .destination-container
-    .card-selector
-    #card
-    .desc
-    button
-    #right {
-    display: none;
-  }
-
-  #plans
-    .container
-    .destination-container
-    .card-selector
-    #card
-    .desc
-    button
-    #down {
-    display: block;
   }
 
   #plans .container .card-container {
