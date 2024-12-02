@@ -13,7 +13,6 @@ const nav = document.querySelector("#nav");
 const heroSection = document.querySelector("#hero");
 const partnersContainer = document.querySelector(".partners-container");
 
-// Remove the old partners scroll code and add this:
 const partnersSwiper = new Swiper(".partners-container", {
   slidesPerView: "auto",
   spaceBetween: 64,
@@ -31,6 +30,12 @@ const heroBgSwiper = new Swiper(".bg-container", {
   pagination: {
     el: ".swiper-pagination",
   },
+  loop: true,
+  autoplay: {
+    delay: 5555,
+    disableOnInteraction: false,
+  },
+  speed: 1000,
 });
 
 const topBookSwiper = new Swiper(".top-book-container", {
@@ -43,25 +48,21 @@ const topBookSwiper = new Swiper(".top-book-container", {
   },
 });
 
-// Add scroll handler for navbar darkening
 window.addEventListener("scroll", () => {
   const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
   if (window.scrollY >= heroBottom - 30 - nav.offsetHeight) {
     nav.classList.add("scrolled");
-    // Add dark mode to nav items
     document.querySelectorAll("#nav a, #nav button").forEach((item) => {
       item.classList.add("nav-dark");
     });
   } else {
     nav.classList.remove("scrolled");
-    // Remove dark mode from nav items
     document.querySelectorAll("#nav a, #nav button").forEach((item) => {
       item.classList.remove("nav-dark");
     });
   }
 });
 
-// Gradient rotation handler
 document.addEventListener("mousemove", (e) => {
   const mouseX = e.clientX;
   const mouseY = e.clientY;
@@ -77,7 +78,6 @@ document.addEventListener("mousemove", (e) => {
   brandSpan.style.color = "transparent";
 });
 
-// Greeting text morphing
 async function morphText(element, oldText, newText) {
   const maxLength = Math.max(oldText.length, newText.length);
   const paddedOld = oldText.padEnd(maxLength, " ");
@@ -110,10 +110,10 @@ function toggleTopBookSlider(disabled = false) {
   const swiper = swiperContainer.swiper;
 
   if (disabled) {
-    swiper.disable(); // Disable swiping functionality
+    swiper.disable();
     swiper.el.classList.add("swiper-no-scroll");
   } else {
-    swiper.enable(); // Re-enable swiping functionality
+    swiper.enable();
     swiper.el.classList.remove("swiper-no-scroll");
   }
 }
@@ -123,9 +123,7 @@ document.addEventListener("click", function (event) {
   const navUl = document.querySelector("#nav ul");
   const hamburger = document.querySelector(".hamburger");
 
-  // Check if nav is active first, no need to check contains if menu isn't open
   if (nav.classList.contains("active")) {
-    // Check if click is outside nav ul and hamburger
     if (!navUl.contains(event.target) && !hamburger.contains(event.target)) {
       nav.classList.remove("active");
     }
@@ -135,4 +133,28 @@ document.addEventListener("click", function (event) {
 function toggleHamburger() {
   const nav = document.querySelector("#nav");
   nav.classList.toggle("active");
+}
+
+function datepicker() {
+  return {
+    selectedDate: "12/01/2024", // Default date shown in the <p> tag
+    flatpickrInstance: null, // Initialize flatpickr instance
+    init() {
+      // Initialize Flatpickr instance
+      const dateInput = document.querySelector("#datepicker");
+      this.flatpickrInstance = flatpickr(dateInput, {
+        dateFormat: "m/d/Y", // Set desired date format
+        defaultDate: this.selectedDate, // Set default date from Alpine data
+        onChange: (selectedDates) => {
+          // Update the Alpine data with the selected date
+          this.selectedDate = flatpickr.formatDate(selectedDates[0], "m/d/Y");
+        },
+      });
+    },
+    openCalendar() {
+      // Open the Flatpickr calendar when the chevron icon is clicked
+      alert(123);
+      this.flatpickrInstance.open();
+    },
+  };
 }

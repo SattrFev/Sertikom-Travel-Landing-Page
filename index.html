@@ -36,8 +36,15 @@
     ></script>
     <script src="src/app.js"></script>
     <script src="script.js" defer></script>
+
+    <!-- FlatPickr -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   </head>
-  <body>
+  <body x-data>
     <nav id="nav">
       <a class="logo" href="#">ExproTravel</a>
       <ul>
@@ -71,7 +78,7 @@
       </button>
     </nav>
 
-    <section id="hero">
+    <section id="hero" x-data>
       <div class="container">
         <div class="desc">
           <h2>Jelajahi keajaiban dunia bersama <span>ExproTravel</span></h2>
@@ -88,7 +95,7 @@
               <h1>Check In</h1>
               <div class="date">
                 <p>12/01/2024</p>
-                <i class="fa-solid fa-chevron-down"></i>
+                <i class="fa-solid fa-chevron-down" @click="openCalendar"></i>
               </div>
             </div>
             <div class="checkout">
@@ -365,10 +372,98 @@
     </section>
 
     <section id="plans">
-      <h1>Plans</h1>
+      <h1>Paket</h1>
       <div class="container">
         <div class="card-container">
-          <div class="budget">
+          <div class="budget" id="card">
+            <div class="bg">
+              <i class="fa-solid fa-circle"></i>
+              <i class="fa-solid fa-circle"></i>
+              <i class="fa-solid fa-circle"></i>
+              <i class="fa-solid fa-circle"></i>
+            </div>
+            <div class="fill">
+              <div class="title">Paket Budget</div>
+              <div class="price">
+                <p>*Mulai dari</p>
+                <h1>Rp. 2.999.000</h1>
+                <p>/ trip</p>
+              </div>
+              <div class="desc">
+                <p>
+                  Liburan murah tanpa ribet dengan paket <b>Budget</b> bareng
+                  exprotravel
+                </p>
+              </div>
+              <div class="cta">
+                <button>Destinasi</button>
+                <button>Pelajari</button>
+              </div>
+              <div class="benefits">
+                <div class="check">
+                  <i class="fa-solid fa-check"></i>
+                  <p>Penginapan</p>
+                </div>
+                <div class="check">
+                  <i class="fa-solid fa-check"></i>
+                  <p>Transportasi</p>
+                </div>
+                <div class="check">
+                  <i class="fa-solid fa-check"></i>
+                  <p>Maks 2 Dewasa, 1 Anak</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="standard" id="card">
+            <div class="bg">
+              <i class="fa-solid fa-circle"></i>
+              <i class="fa-solid fa-circle"></i>
+              <i class="fa-solid fa-circle"></i>
+              <i class="fa-solid fa-circle"></i>
+            </div>
+            <div class="fill">
+              <div class="title">Paket Standard</div>
+              <div class="price">
+                <p>*Mulai dari</p>
+                <h1>Rp. 5.599.000</h1>
+                <p>/ trip</p>
+              </div>
+              <div class="desc">
+                <p>
+                  Liburan murah dan mewah tanpa ribet dengan paket
+                  <b>Standard</b> bareng exprotravel
+                </p>
+              </div>
+              <div class="cta">
+                <button>Destinasi</button>
+                <button>Pelajari</button>
+              </div>
+              <div class="benefits">
+                <div class="check">
+                  <i class="fa-solid fa-check"></i>
+                  <p>Penginapan</p>
+                </div>
+                <div class="check">
+                  <i class="fa-solid fa-check"></i>
+                  <p>Transportasi</p>
+                </div>
+                <div class="check">
+                  <i class="fa-solid fa-check"></i>
+                  <p>Layanan 24 Jam</p>
+                </div>
+                <div class="check">
+                  <i class="fa-solid fa-check"></i>
+                  <p>Tour Guide</p>
+                </div>
+                <div class="check">
+                  <i class="fa-solid fa-check"></i>
+                  <p>Maks 4 Orang</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="premium" id="card">
             <div class="bg">
               <i class="fa-solid fa-circle"></i>
               <i class="fa-solid fa-circle"></i>
@@ -378,12 +473,13 @@
             <div class="fill">
               <div class="title">Paket Premium</div>
               <div class="price">
-                <h1>Rp. 2.999.000</h1>
-                <p>/ person</p>
+                <p>*Mulai dari</p>
+                <h1>Rp. 11.999.000</h1>
+                <p>/ trip</p>
               </div>
               <div class="desc">
                 <p>
-                  Liburan murah tanpa ribet dengan paket Ekonomi bareng
+                  Liburan mewah tanpa ribet dengan paket <b>Premium</b> bareng
                   exprotravel
                 </p>
               </div>
@@ -420,7 +516,46 @@
             </div>
           </div>
         </div>
-        <div class="destination-container"></div>
+        <div class="destination-container">
+          <div class="card-selector">
+            <div class="budget" id="card">
+              <div class="bg">
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i
+                ><i class="fa-solid fa-circle"></i>
+              </div>
+              <div class="desc">
+                <h1>Paket Budget</h1>
+                <button><i class="fa-solid fa-chevron-right"></i></button>
+              </div>
+            </div>
+            <div class="standard" id="card">
+              <div class="bg">
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i
+                ><i class="fa-solid fa-circle"></i>
+              </div>
+              <div class="desc">
+                <h1>Paket Standard</h1>
+                <button><i class="fa-solid fa-chevron-right"></i></button>
+              </div>
+            </div>
+            <div class="premium" id="card">
+              <div class="bg">
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i>
+                <i class="fa-solid fa-circle"></i
+                ><i class="fa-solid fa-circle"></i>
+              </div>
+              <div class="desc">
+                <h1>Paket Premium</h1>
+                <button><i class="fa-solid fa-chevron-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
